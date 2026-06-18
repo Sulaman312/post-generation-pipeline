@@ -1,0 +1,34 @@
+{
+  "client_id": "arsuno",
+  "run_id": "2026-05-10_13-33-01",
+  "pipeline_id": "article",
+  "topic": "AI patient intake transformation",
+  "statuses": {
+    "topic_card": "done",
+    "serp_research": "pending",
+    "research": "pending",
+    "assignment_brief": "done",
+    "outline": "pending",
+    "draft": "pending",
+    "fact_check": "pending",
+    "final_output": "pending"
+  },
+  "timestamp": "2026-05-28T15:13:08.581298",
+  "archived": false,
+  "step_timings": {
+    "topic_card": {
+      "started_at": "2026-05-23T20:20:01.299",
+      "finished_at": "2026-05-11T06:17:51.448",
+      "duration_ms": null,
+      "status": "done",
+      "inferred": true
+    },
+    "assignment_brief": {
+      "started_at": "2026-05-11T06:17:51.448",
+      "finished_at": "2026-05-11T06:17:51.446",
+      "duration_ms": null,
+      "status": "done",
+      "inferred": true
+    }
+  }
+}

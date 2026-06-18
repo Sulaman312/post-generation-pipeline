@@ -1,0 +1,286 @@
+{
+  "id": "arsuno_Schneiteretfils_template",
+  "name": "Schneiteretfils_template",
+  "source": {
+    "type": "figma",
+    "file_key": "9Jhg58OR1T6am8LDD67RoN",
+    "node_id": "0:1",
+    "link": "https://www.figma.com/design/9Jhg58OR1T6am8LDD67RoN/Untitled?node-id=0-1&p=f&t=3O4upethj8L3Xl8t-0"
+  },
+  "assets_dir": "assets",
+  "formats": {
+    "instagram": {
+      "width": 1080,
+      "height": 1350,
+      "layers": [
+        {
+          "kind": "asset",
+          "name": "green-footer-bg",
+          "asset": "green-footer-bg.png",
+          "node_id": "1:6",
+          "opacity": 1.0,
+          "x": 0,
+          "y": 877,
+          "width": 1080,
+          "height": 473
+        },
+        {
+          "kind": "text",
+          "name": "headline",
+          "text": "Contrat de prévoyance",
+          "fontSize": 42,
+          "fontWeight": "400",
+          "fontFamily": "Inter",
+          "textAlign": "left",
+          "fill": "#ffffff",
+          "opacity": 1.0,
+          "x": 272,
+          "y": 1044,
+          "width": 591,
+          "height": 70
+        },
+        {
+          "kind": "text",
+          "name": "subline",
+          "text": "Commencer l'année sereinement",
+          "fontSize": 32,
+          "fontWeight": "400",
+          "fontFamily": "Inter",
+          "textAlign": "left",
+          "fill": "#ffffff",
+          "opacity": 1.0,
+          "x": 243,
+          "y": 1114,
+          "width": 649,
+          "height": 47
+        },
+        {
+          "kind": "asset",
+          "name": "logo",
+          "asset": "logo.png",
+          "node_id": "1:9",
+          "opacity": 1.0,
+          "x": 147,
+          "y": 17,
+          "width": 668,
+          "height": 140
+        },
+        {
+          "kind": "asset",
+          "name": "palm-leaf-watermark",
+          "asset": "palm-leaf-watermark.png",
+          "node_id": "1:10",
+          "opacity": 0.27000001072883606,
+          "x": -218,
+          "y": 655,
+          "width": 888,
+          "height": 955
+        },
+        {
+          "kind": "asset",
+          "name": "horizontal-divider2",
+          "asset": "horizontal-divider2.png",
+          "node_id": "1:11",
+          "opacity": 1.0,
+          "x": 161,
+          "y": 1044,
+          "width": 984,
+          "height": 194
+        },
+        {
+          "kind": "asset",
+          "name": "horizontal-divider1",
+          "asset": "horizontal-divider1.png",
+          "node_id": "1:12",
+          "opacity": 1.0,
+          "x": -24,
+          "y": 982,
+          "width": 968,
+          "height": 175
+        }
+      ]
+    },
+    "linkedin": {
+      "width": 1200,
+      "height": 628,
+      "layers": [
+        {
+          "kind": "asset",
+          "name": "green-footer-bg",
+          "asset": "green-footer-bg.png",
+          "node_id": "1:25",
+          "opacity": 1.0,
+          "x": 0,
+          "y": 419,
+          "width": 1200,
+          "height": 211
+        },
+        {
+          "kind": "asset",
+          "name": "logo",
+          "asset": "logo.png",
+          "node_id": "1:26",
+          "opacity": 1.0,
+          "x": 317,
+          "y": 0,
+          "width": 566,
+          "height": 119
+        },
+        {
+          "kind": "asset",
+          "name": "horizontal-divider1",
+          "asset": "horizontal-divider1.png",
+          "node_id": "1:27",
+          "opacity": 1.0,
+          "x": -46,
+          "y": 467,
+          "width": 986,
+          "height": 58
+        },
+        {
+          "kind": "asset",
+          "name": "horizontal-divider2",
+          "asset": "horizontal-divider2.png",
+          "node_id": "1:28",
+          "opacity": 1.0,
+          "x": 317,
+          "y": 545,
+          "width": 969,
+          "height": 56
+        },
+        {
+          "kind": "text",
+          "name": "subline",
+          "text": "Commencer l'année sereinement",
+          "fontSize": 24,
+          "fontWeight": "400",
+          "fontFamily": "Inter",
+          "textAlign": "left",
+          "fill": "#ffffff",
+          "opacity": 1.0,
+          "x": 403,
+          "y": 544,
+          "width": 480,
+          "height": 47
+        },
+        {
+          "kind": "text",
+          "name": "headline",
+          "text": "Contrat de prévoyance",
+          "fontSize": 32,
+          "fontWeight": "400",
+          "fontFamily": "Inter",
+          "textAlign": "left",
+          "fill": "#ffffff",
+          "opacity": 1.0,
+          "x": 421,
+          "y": 486,
+          "width": 444,
+          "height": 47
+        },
+        {
+          "kind": "asset",
+          "name": "palm-leaf-watermark",
+          "asset": "palm-leaf-watermark.png",
+          "node_id": "1:31",
+          "opacity": 0.3799999952316284,
+          "x": -117,
+          "y": 257,
+          "width": 573,
+          "height": 588
+        }
+      ]
+    },
+    "facebook": {
+      "width": 1200,
+      "height": 630,
+      "layers": [
+        {
+          "kind": "asset",
+          "name": "green-footer-bg",
+          "asset": "green-footer-bg.png",
+          "node_id": "1:25",
+          "opacity": 1.0,
+          "x": 0,
+          "y": 419,
+          "width": 1200,
+          "height": 211
+        },
+        {
+          "kind": "asset",
+          "name": "logo",
+          "asset": "logo.png",
+          "node_id": "1:26",
+          "opacity": 1.0,
+          "x": 317,
+          "y": 0,
+          "width": 566,
+          "height": 119
+        },
+        {
+          "kind": "asset",
+          "name": "horizontal-divider1",
+          "asset": "horizontal-divider1.png",
+          "node_id": "1:27",
+          "opacity": 1.0,
+          "x": -46,
+          "y": 467,
+          "width": 986,
+          "height": 58
+        },
+        {
+          "kind": "asset",
+          "name": "horizontal-divider2",
+          "asset": "horizontal-divider2.png",
+          "node_id": "1:28",
+          "opacity": 1.0,
+          "x": 317,
+          "y": 545,
+          "width": 969,
+          "height": 56
+        },
+        {
+          "kind": "text",
+          "name": "subline",
+          "text": "Commencer l'année sereinement",
+          "fontSize": 24,
+          "fontWeight": "400",
+          "fontFamily": "Inter",
+          "textAlign": "left",
+          "fill": "#ffffff",
+          "opacity": 1.0,
+          "x": 403,
+          "y": 544,
+          "width": 480,
+          "height": 47
+        },
+        {
+          "kind": "text",
+          "name": "headline",
+          "text": "Contrat de prévoyance",
+          "fontSize": 32,
+          "fontWeight": "400",
+          "fontFamily": "Inter",
+          "textAlign": "left",
+          "fill": "#ffffff",
+          "opacity": 1.0,
+          "x": 421,
+          "y": 486,
+          "width": 444,
+          "height": 47
+        },
+        {
+          "kind": "asset",
+          "name": "palm-leaf-watermark",
+          "asset": "palm-leaf-watermark.png",
+          "node_id": "1:31",
+          "opacity": 0.3799999952316284,
+          "x": -117,
+          "y": 257,
+          "width": 573,
+          "height": 588
+        }
+      ]
+    }
+  }
+}
