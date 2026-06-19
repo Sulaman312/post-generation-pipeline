@@ -16,7 +16,12 @@ def create_app() -> Flask:
     configure_logging(level=logging.INFO)
     logger.info("ContentFlow backend starting")
 
-    app = Flask(__name__)
+    ui_build_dir = Path(__file__).resolve().parent.parent / "atlas-ui" / "build"
+    app = Flask(
+        __name__,
+        static_folder=str(ui_build_dir / "static"),
+        static_url_path="/static",
+    )
     # Match prior FastAPI behavior: allow browser dev servers on any port (:3000, :3001, …).
     CORS(
         app,
@@ -30,8 +35,6 @@ def create_app() -> Flask:
     )
     register_request_logging(app)
     app.register_blueprint(api_bp)
-
-    ui_build_dir = Path(__file__).resolve().parent.parent / "atlas-ui" / "build"
 
     @app.get("/")
     def serve_ui_root():
