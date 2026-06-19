@@ -1,0 +1,73 @@
+{
+  "client_id": "Schneiteretfils",
+  "run_id": "2026-06-20_00-11-44",
+  "pipeline_id": "social_media",
+  "topic": "Starting the year serenely with a funeral pre-planning contract.",
+  "statuses": {
+    "client_profile_topic": "done",
+    "content_angle_intent": "done",
+    "image_prompt": "done",
+    "image_generation": "done",
+    "image_formats": "done",
+    "image_template": "done",
+    "captions": "done",
+    "review_checklist": "done"
+  },
+  "timestamp": "2026-06-20T00:17:01.063217",
+  "archived": false,
+  "manual_inputs": {
+    "paragraph": "Starting the year serenely with a funeral pre-planning contract.",
+    "additional_details": "Explain that a pre-planning contract allows someone to record their wishes in advance: ceremony type, venue, music, flowers, announcements, and budget. The key\n  message should be calm and reassuring: planning ahead relieves loved ones from difficult decisions when the time comes and ensures choices are respected.\n\n  Tone:\n  Sober, respectful, gentle, reassuring. Avoid anything salesy.\n\n  CTA:\n  Invite people to learn more or speak with the team discreetly.\n\n  Useful link:\n  https://www.schneiteretfils.ch/prevoyance/\n\n  Image direction:\n  A calm, warm, respectful scene suggesting peace of mind: soft natural light, neutral interior, a person reviewing documents with a caring advisor, no cemetery\n  imagery, no sadness-heavy visuals."
+  },
+  "step_timings": {
+    "client_profile_topic": {
+      "started_at": "2026-06-20T00:11:45.980",
+      "finished_at": "2026-06-20T00:11:48.635",
+      "duration_ms": 2655,
+      "status": "done"
+    },
+    "content_angle_intent": {
+      "started_at": "2026-06-20T00:11:52.238",
+      "finished_at": "2026-06-20T00:11:54.673",
+      "duration_ms": 2435,
+      "status": "done"
+    },
+    "image_prompt": {
+      "started_at": "2026-06-20T00:12:02.909",
+      "finished_at": "2026-06-20T00:12:08.494",
+      "duration_ms": 5585,
+      "status": "done"
+    },
+    "image_generation": {
+      "started_at": "2026-06-20T00:12:23.004",
+      "finished_at": "2026-06-20T00:14:35.969",
+      "duration_ms": 132965,
+      "status": "done"
+    },
+    "image_formats": {
+      "started_at": "2026-06-20T00:15:50.130",
+      "finished_at": "2026-06-20T00:16:14.543",
+      "duration_ms": 24413,
+      "status": "done"
+    },
+    "image_template": {
+      "started_at": "2026-06-20T00:16:32.564",
+      "finished_at": "2026-06-20T00:16:32.567",
+      "duration_ms": 3,
+      "status": "done"
+    },
+    "captions": {
+      "started_at": "2026-06-20T00:16:47.133",
+      "finished_at": "2026-06-20T00:16:53.849",
+      "duration_ms": 6716,
+      "status": "done"
+    },
+    "review_checklist": {
+      "started_at": "2026-06-20T00:16:57.172",
+      "finished_at": "2026-06-20T00:17:01.063",
+      "duration_ms": 3891,
+      "status": "done"
+    }
+  },
+  "context_summary": "---CONTEXT SUMMARY START---\nCLIENT: Schneiteretfils\nGENERATED: 2026-06-20T00:11:44.342135\n\nCOMPANY OVERVIEW:\n  Name: Schneiter et Fils\n  Value Prop: # Schneiter et Fils \u2014 company context and 2026 action plan\n  Main Features:\n  [NOT PROVIDED]\n  Key Customers: [NOT PROVIDED]\n\nAUDIENCE PERSONAS:\n  [NOT PROVIDED]\n\nBRAND VOICE (4 Core Attributes):\n  - Clear, Not Dumbed Down\n  - Human, Not Corporate\n  - Practical, Not Theoretical\n\nBANNED WORDS (Do not use):\n[NOT PROVIDED]\n\nCTA PHILOSOPHY:\n# Schneiter et Fils \u2014 CTA guidelines ## CTA approach CTAs should be gentle and practical. They should offer help, information, or a conversation, never pressure.\n\nCONTENT CLUSTERS (Internal Linking):\n  [NOT PROVIDED]\n\n---CONTEXT SUMMARY END---\n"
+}

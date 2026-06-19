@@ -1,0 +1,27 @@
+{
+  "images": [
+    "image_01.png",
+    "image_02.png",
+    "image_03.png",
+    "image_04.png"
+  ],
+  "selected_primary": "image_04.png",
+  "meta": {
+    "image_01.png": {
+      "style_key": "photorealistic",
+      "style_label": "Photorealistic"
+    },
+    "image_02.png": {
+      "style_key": "flat_graphic",
+      "style_label": "Flat graphic"
+    },
+    "image_03.png": {
+      "style_key": "bold_typographic",
+      "style_label": "Bold typographic"
+    },
+    "image_04.png": {
+      "style_key": "lifestyle_warm",
+      "style_label": "Lifestyle warm"
+    }
+  }
+}

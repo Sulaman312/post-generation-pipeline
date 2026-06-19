@@ -15,7 +15,7 @@ def health():
     return jsonify(ok=True, service="ContentFlow API")
 
 
-@api_bp.get("/")
+@api_bp.get("/api")
 def api_root():
     """Browser-friendly hint — the React UI runs on port 3000, not here."""
     accept = (request.headers.get("Accept") or "").lower()

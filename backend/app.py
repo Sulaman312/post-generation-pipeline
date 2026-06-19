@@ -1,8 +1,9 @@
 """Flask application factory."""
 
 import logging
+from pathlib import Path
 
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_cors import CORS
 
 from backend.api.routes import api_bp
@@ -29,4 +30,28 @@ def create_app() -> Flask:
     )
     register_request_logging(app)
     app.register_blueprint(api_bp)
+
+    ui_build_dir = Path(__file__).resolve().parent.parent / "atlas-ui" / "build"
+
+    @app.get("/")
+    def serve_ui_root():
+        if (ui_build_dir / "index.html").is_file():
+            return send_from_directory(ui_build_dir, "index.html")
+        return {
+            "ok": True,
+            "service": "ContentFlow API",
+            "ui": "Run `cd atlas-ui && npm start` in development.",
+            "health": "/health",
+            "clients": "/clients",
+        }
+
+    @app.get("/<path:path>")
+    def serve_ui_path(path: str):
+        target = ui_build_dir / path
+        if target.is_file():
+            return send_from_directory(ui_build_dir, path)
+        if (ui_build_dir / "index.html").is_file():
+            return send_from_directory(ui_build_dir, "index.html")
+        return {"error": "Not found"}, 404
+
     return app

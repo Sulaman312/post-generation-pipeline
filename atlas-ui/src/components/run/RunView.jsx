@@ -1757,7 +1757,12 @@ function TemplatePlacementPanel({ client, runId, toast }) {
           const logo = fmt.logo || {};
           const card = fmt.card || {};
           const text = fmt.text || {};
-          const url = api.formattedImageUrl(client, runId, o.baseFilename || o.filename, cacheKey);
+          const url = api.formattedImageUrl(
+            client,
+            runId,
+            importedLayers ? o.filename : o.baseFilename || o.filename,
+            cacheKey
+          );
           return (
             <div className="template-card" key={o.key}>
               <div className="template-card-title">{o.label}</div>
@@ -1767,17 +1772,7 @@ function TemplatePlacementPanel({ client, runId, toast }) {
                 style={{ aspectRatio: `${o.width} / ${o.height}` }}
               >
                 <img src={url} alt={o.filename} />
-                {importedLayers ? (
-                  importedLayers.map((layer, index) => (
-                    <ImportedTemplateLayer
-                      key={`${layer.name || layer.kind}-${index}`}
-                      client={client}
-                      templateId={template.template_id || selectedTemplateId || "social_post"}
-                      layer={layer}
-                      output={o}
-                    />
-                  ))
-                ) : (
+                {!importedLayers ? (
                   <>
                     <button
                       type="button"
@@ -1817,7 +1812,7 @@ function TemplatePlacementPanel({ client, runId, toast }) {
                       </span>
                     </button>
                   </>
-                )}
+                ) : null}
               </div>
             </div>
           );
@@ -1825,72 +1820,4 @@ function TemplatePlacementPanel({ client, runId, toast }) {
       </div>
     </div>
   );
-}
-
-function ImportedTemplateLayer({ client, templateId, layer, output }) {
-  const left = `${(Number(layer.x || 0) / output.width) * 100}%`;
-  const top = `${(Number(layer.y || 0) / output.height) * 100}%`;
-  const width = `${(Number(layer.width || 1) / output.width) * 100}%`;
-  const height = `${(Number(layer.height || 1) / output.height) * 100}%`;
-  const previewScale = 100 / Math.max(1, output.width);
-  const baseStyle = {
-    left,
-    top,
-    width,
-    height,
-    opacity: layer.opacity ?? 1,
-  };
-
-  if (layer.kind === "asset") {
-    return (
-      <div
-        className="template-import-layer template-import-layer--asset"
-        style={baseStyle}
-        title={layer.name || "Asset"}
-      >
-        <img
-          src={api.socialTemplateAssetUrl(client, layer.asset, templateId)}
-          alt=""
-          draggable="false"
-        />
-      </div>
-    );
-  }
-
-  if (layer.kind === "text") {
-    return (
-      <div
-        className="template-import-layer template-import-layer--text"
-        style={{
-          ...baseStyle,
-          color: layer.fill || "#fff",
-          fontSize: `${Math.max(1, Number(layer.fontSize || 24) * previewScale)}cqw`,
-          fontFamily: "Arial, DejaVu Sans, sans-serif",
-          fontWeight: String(layer.fontWeight || "").match(/700|800|900|bold/i)
-            ? 800
-            : 400,
-          textAlign: layer.textAlign || "left",
-        }}
-        title={layer.name || "Text"}
-      >
-        {layer.text || ""}
-      </div>
-    );
-  }
-
-  if (layer.kind === "shape") {
-    return (
-      <div
-        className="template-import-layer template-import-layer--shape"
-        style={{
-          ...baseStyle,
-          background: layer.fill || "#111827",
-          borderRadius: `${Math.max(0, Number(layer.radius || 0) / 3)}px`,
-        }}
-        title={layer.name || "Shape"}
-      />
-    );
-  }
-
-  return null;
 }

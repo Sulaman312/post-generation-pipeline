@@ -1,0 +1,272 @@
+{
+  "selected_primary": "image_04.png",
+  "generated_at": "2026-06-20T00:22:16",
+  "overlay_applied": false,
+  "template_applied": true,
+  "template": {
+    "version": 1,
+    "template_id": "Gauchat_template",
+    "template_name": "Gauchat_template",
+    "source_template": "clients/Gauchat/templates/Gauchat_template/template.json",
+    "headline": {
+      "lines": []
+    },
+    "formats": {
+      "facebook": {
+        "height": 630,
+        "layers": [
+          {
+            "asset": "facebook_bg-text.png",
+            "height": 156,
+            "kind": "asset",
+            "name": "bg-text",
+            "node_id": "1:36",
+            "opacity": 1,
+            "width": 1200,
+            "x": 0,
+            "y": 474
+          },
+          {
+            "fill": "#315083",
+            "fontFamily": "Asset",
+            "fontSize": 36,
+            "fontWeight": "400",
+            "height": 66,
+            "kind": "text",
+            "name": "text",
+            "opacity": 1,
+            "text": "TRANSPORT DE MACHINES :",
+            "textAlign": "left",
+            "width": 977,
+            "x": 85,
+            "y": 487
+          },
+          {
+            "fill": "#315083",
+            "fontFamily": "Assistant",
+            "fontSize": 36,
+            "fontWeight": "800",
+            "height": 49,
+            "kind": "text",
+            "name": "text",
+            "opacity": 1,
+            "text": "L\u2019 ASSURANCE D\u2019UN",
+            "textAlign": "left",
+            "width": 608,
+            "x": 85,
+            "y": 529
+          },
+          {
+            "fill": "#315083",
+            "fontFamily": "Assistant",
+            "fontSize": 36,
+            "fontWeight": "800",
+            "height": 49,
+            "kind": "text",
+            "name": "text",
+            "opacity": 1,
+            "text": "CHANTIER FLUIDE",
+            "textAlign": "left",
+            "width": 608,
+            "x": 85,
+            "y": 566
+          },
+          {
+            "asset": "facebook_logo.png",
+            "height": 103,
+            "kind": "asset",
+            "name": "logo",
+            "node_id": "2:51",
+            "opacity": 1,
+            "width": 266,
+            "x": 901,
+            "y": 501
+          }
+        ],
+        "width": 1200
+      },
+      "instagram": {
+        "height": 1350,
+        "layers": [
+          {
+            "asset": "instagram_bg-text.png",
+            "height": 311,
+            "kind": "asset",
+            "name": "bg-text",
+            "node_id": "1:30",
+            "opacity": 1,
+            "width": 1080,
+            "x": 0,
+            "y": 1039
+          },
+          {
+            "fill": "#315083",
+            "fontFamily": "Asset",
+            "fontSize": 46,
+            "fontWeight": "400",
+            "height": 66,
+            "kind": "text",
+            "name": "text",
+            "opacity": 1,
+            "text": "TRANSPORT DE MACHINES :",
+            "textAlign": "left",
+            "width": 977,
+            "x": 71,
+            "y": 1115
+          },
+          {
+            "asset": "instagram_logo.png",
+            "height": 121,
+            "kind": "asset",
+            "name": "logo",
+            "node_id": "1:49",
+            "opacity": 1,
+            "width": 312,
+            "x": 736,
+            "y": 1148
+          },
+          {
+            "fill": "#315083",
+            "fontFamily": "Assistant",
+            "fontSize": 46,
+            "fontWeight": "800",
+            "height": 49,
+            "kind": "text",
+            "name": "text",
+            "opacity": 1,
+            "text": "L\u2019 ASSURANCE D\u2019UN",
+            "textAlign": "left",
+            "width": 608,
+            "x": 71,
+            "y": 1181
+          },
+          {
+            "fill": "#315083",
+            "fontFamily": "Assistant",
+            "fontSize": 46,
+            "fontWeight": "800",
+            "height": 49,
+            "kind": "text",
+            "name": "text",
+            "opacity": 1,
+            "text": "CHANTIER FLUIDE",
+            "textAlign": "left",
+            "width": 608,
+            "x": 72,
+            "y": 1247
+          },
+          {
+            "asset": "instagram_logo_1_47.png",
+            "height": 121,
+            "kind": "asset",
+            "name": "logo",
+            "node_id": "1:47",
+            "opacity": 1,
+            "width": 312,
+            "x": 736,
+            "y": 1148
+          }
+        ],
+        "width": 1080
+      },
+      "linkedin": {
+        "height": 628,
+        "layers": [
+          {
+            "asset": "linkedin_bg-text.png",
+            "height": 156,
+            "kind": "asset",
+            "name": "bg-text",
+            "node_id": "1:42",
+            "opacity": 1,
+            "width": 1200,
+            "x": 0,
+            "y": 472
+          },
+          {
+            "fill": "#315083",
+            "fontFamily": "Asset",
+            "fontSize": 36,
+            "fontWeight": "400",
+            "height": 66,
+            "kind": "text",
+            "name": "text",
+            "opacity": 1,
+            "text": "TRANSPORT DE MACHINES :",
+            "textAlign": "left",
+            "width": 977,
+            "x": 85,
+            "y": 485
+          },
+          {
+            "fill": "#315083",
+            "fontFamily": "Assistant",
+            "fontSize": 36,
+            "fontWeight": "800",
+            "height": 49,
+            "kind": "text",
+            "name": "text",
+            "opacity": 1,
+            "text": "L\u2019 ASSURANCE D\u2019UN",
+            "textAlign": "left",
+            "width": 608,
+            "x": 85,
+            "y": 527
+          },
+          {
+            "fill": "#315083",
+            "fontFamily": "Assistant",
+            "fontSize": 36,
+            "fontWeight": "800",
+            "height": 49,
+            "kind": "text",
+            "name": "text",
+            "opacity": 1,
+            "text": "CHANTIER FLUIDE",
+            "textAlign": "left",
+            "width": 608,
+            "x": 85,
+            "y": 565
+          },
+          {
+            "asset": "linkedin_logo.png",
+            "height": 103,
+            "kind": "asset",
+            "name": "logo",
+            "node_id": "1:50",
+            "opacity": 1,
+            "width": 266,
+            "x": 901,
+            "y": 498
+          }
+        ],
+        "width": 1200
+      }
+    },
+    "created_at": "2026-06-20T00:22:08",
+    "updated_at": "2026-06-20T00:22:14"
+  },
+  "outputs": {
+    "instagram": {
+      "filename": "ig_1080x1350.png",
+      "base_filename": "base_ig_1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "label": "Instagram"
+    },
+    "linkedin": {
+      "filename": "li_1200x628.png",
+      "base_filename": "base_li_1200x628.png",
+      "width": 1200,
+      "height": 628,
+      "label": "LinkedIn"
+    },
+    "facebook": {
+      "filename": "fb_1200x630.png",
+      "base_filename": "base_fb_1200x630.png",
+      "width": 1200,
+      "height": 630,
+      "label": "Facebook"
+    }
+  }
+}

@@ -6,6 +6,50 @@ Core services:
 Machine and equipment transport (heavy machinery, specific equipment)
 Skip rental (standard skips, insulated pear-shaped skips for asphalt/bituminous mixes)
 Crane truck rental (with or without operator)
+Special transport / tailor-made solutions: https://www.gauchat.ch/contact/
+
+## 2026 action plan
+
+Budget excluding tax: CHF 6,000.
+
+### Recurring actions
+
+- Website update and maintenance: Infomaniak and WordPress functionality updates.
+- Plugin updates, security checks, and backups: 4 times per year.
+- Google My Business profile updates: up to 2 per year, including summer/winter holiday dates.
+- Content additions on request: new service, job listing, promotional block, or similar.
+
+### 2026 calendar at a glance
+
+| Month | Theme | LinkedIn | GMB | Security / popup |
+|---|---|---|---|---|
+| January | Company presentation and expertise | Yes | Yes | Security update |
+| February | Skips and construction waste management | Yes | Yes | - |
+| March | Transport of machinery and specific equipment | Yes | Yes | - |
+| April | Logistics partner for civil engineering sites | Yes | Yes | Security update |
+| May | Trucks with insulated pear-shaped skips | Yes | Yes | - |
+| June | Driver safety and professionalism | Yes | Yes | - |
+| July | Peak road construction season | Yes | Yes | Security update + summer popup if closed |
+| August | Planning back-to-work logistics | Yes | Yes | - |
+| September | Crane trucks | Yes | Yes | - |
+| October | Special transport and tailor-made solutions | Yes | Yes | Security update |
+| November | Training company and apprentices | Yes | Yes | - |
+| December | Anticipate 2027 logistics and best wishes | Yes | Yes | Winter popup if closed |
+
+### Monthly content notes
+
+- January: family business since 1961, 14 professionals, varied fleet, machine transport and equipment rental.
+- February: skip rental for clean, organised sites and construction waste management.
+- March: machine transport as the guarantee of a smooth site.
+- April: A. Gauchat SA as a logistics partner for civil engineering sites.
+- May: insulated pear-shaped skips for asphalt and bituminous mixes.
+- June: driver safety, professionalism, procedures, manoeuvres, and site communication.
+- July: summer peak season for road construction; planning, rotations, deadlines, and adapted vehicles.
+- August: back-to-work logistics planning.
+- September: crane truck rental with or without operator.
+- October: special transport for narrow access, oversized loads, tight schedules, and delicate manoeuvres.
+- November: certified training company and apprentices.
+- December: thank clients and partners, anticipate 2027 logistics, request holiday closure dates if needed.
 Special transport and tailor-made logistics solutions
 Vehicle provision for civil engineering and road construction sites (thermos, skips, crane trucks)
 Site logistics coordination and planning

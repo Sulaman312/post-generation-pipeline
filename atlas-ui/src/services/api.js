@@ -1,12 +1,10 @@
 /** HTTP client for the ArticleGen Flask API.
  *
- * Mirrors the stable pattern from the FastAPI-era app: browser calls Flask directly on
- * port 8000. `backend/app.py` enables CORS for all origins, so `:3000` / `:3001` work fine.
- *
- * Override with `REACT_APP_API_URL` (no trailing slash) if you deploy separately.
+ * In production, the React build is served by Flask, so API calls use the same origin.
+ * Override with `REACT_APP_API_URL` (no trailing slash) for local dev or split deployments.
  */
 
-const DEFAULT_BASE = "http://127.0.0.1:8000";
+const DEFAULT_BASE = "";
 
 const envUrlRaw =
   typeof process !== "undefined"
@@ -35,7 +33,7 @@ export function runLogoUrl(clientId, runId) {
 
 /** Human-readable target (for UI error banners). */
 export function describeApiTargetForHumans() {
-  return BASE;
+  return BASE || "same origin";
 }
 
 export function generatedImageUrl(clientId, runId, filename) {
