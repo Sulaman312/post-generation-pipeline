@@ -21,7 +21,5 @@ atlas-ui/build/
 atlas-ui/.env
 atlas-ui/.env.*
 
-clients/*/runs/
-
 *.log
 .DS_Store
