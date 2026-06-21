@@ -47,6 +47,12 @@ _BUILTIN_SPECS: list[dict[str, str]] = [
         "description": "Tone, banned hype, preferred phrasing, and structure expectations.",
         "placeholder": "## Voice\n- Tone:\n- Reading level:\n\n## Avoid\n- …\n\n## Preferred words\n- …\n",
     },
+    {
+        "filename": "image_style.md",
+        "title": "Image style guide",
+        "description": "Client-specific visual rules for AI image prompt generation.",
+        "placeholder": "# Image Style Guide\n",
+    },
 ]
 
 _SLUG_RE = re.compile(r"^[a-z0-9][a-z0-9_-]{0,62}$")

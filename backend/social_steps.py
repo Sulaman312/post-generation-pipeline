@@ -83,6 +83,17 @@ def _user_idea_block(manifest: dict) -> str:
     return social_input.format_manual_block(manual)
 
 
+def _image_style_block(client_id: str) -> str:
+
+    path = config.CLIENTS_DIR / client_id / "context" / "image_style.md"
+
+    if not path.is_file():
+
+        return ""
+
+    return path.read_text(encoding="utf-8").strip()
+
+
 
 
 
@@ -230,7 +241,29 @@ def run_step_3_image_prompt(
 
     )
 
-    out = _chat(social_prompts.IMAGE_PROMPT_SYSTEM, user_msg, step_label="Social Step 3")
+    image_style = _image_style_block(client_id)
+
+    if image_style:
+
+        user_msg = (
+
+            f"{user_msg}\n\n"
+
+            "---IMAGE STYLE GUIDE---\n"
+
+            f"{image_style}\n"
+
+            "---END IMAGE STYLE GUIDE---\n"
+
+        )
+
+        system_msg = social_prompts.CLIENT_IMAGE_PROMPT_SYSTEM
+
+    else:
+
+        system_msg = social_prompts.IMAGE_PROMPT_SYSTEM
+
+    out = _chat(system_msg, user_msg, step_label="Social Step 3")
 
     return _save_md(client_id, run_id, step_name, out.strip() + "\n")
 

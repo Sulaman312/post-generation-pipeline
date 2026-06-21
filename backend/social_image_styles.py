@@ -27,7 +27,20 @@ STYLE_PRESETS: tuple[dict[str, str], ...] = (
     },
 )
 
-PRESET_BY_KEY = {p["key"]: p for p in STYLE_PRESETS}
+CLIENT_STYLE_PRESETS: tuple[dict[str, str], ...] = (
+    {
+        "key": "primary",
+        "label": "Primary image prompt",
+        "description": "Client-specific primary brand image direction.",
+    },
+    {
+        "key": "alternate",
+        "label": "Alternate image prompt",
+        "description": "Client-specific alternate camera angle or visual variation.",
+    },
+)
+
+PRESET_BY_KEY = {p["key"]: p for p in (*STYLE_PRESETS, *CLIENT_STYLE_PRESETS)}
 
 
 def _normalize_heading(text: str) -> str:
@@ -108,6 +121,26 @@ def _fallback_style_prompt(master: str, preset: dict[str, str]) -> str:
 def parse_style_prompts(markdown: str) -> list[dict[str, str]]:
     """Return one prompt dict per preset, in stable order."""
     md = (markdown or "").strip()
+    client_style_results: list[dict[str, str]] = []
+    for preset in CLIENT_STYLE_PRESETS:
+        prompt = _extract_section(md, preset["label"])
+        if not prompt:
+            prompt = _extract_section(md, preset["key"].replace("_", " "))
+        if not prompt and preset["key"] == "primary":
+            prompt = _extract_section(md, "Full image-generation prompt")
+            if not prompt:
+                prompt = _extract_section(md, "Full image generation prompt")
+        if prompt:
+            client_style_results.append(
+                {
+                    "style_key": preset["key"],
+                    "style_label": preset["label"],
+                    "prompt": prompt.strip(),
+                }
+            )
+    if client_style_results:
+        return client_style_results
+
     results: list[dict[str, str]] = []
 
     # New format: ## Photorealistic, ## Flat graphic, …
