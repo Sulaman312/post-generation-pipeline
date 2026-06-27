@@ -2,7 +2,7 @@
 
 Environment (see repo `env.example`):
   ANTHROPIC_API_KEY — required for all Claude-powered steps
-  CLAUDE_MODEL       — default `claude-sonnet-4-20250514`
+  CLAUDE_MODEL       — default `claude-sonnet-4-6`
   MAX_TOKENS         — max output tokens per step (config.py)
   TEMPERATURE        — sampling temperature (config.py)
 

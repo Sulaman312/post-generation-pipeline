@@ -18,7 +18,7 @@ if _project_env:
 
 # Anthropic Claude — all editorial LLM steps (topic card, research, draft, …)
 ANTHROPIC_API_KEY = (os.getenv("ANTHROPIC_API_KEY") or "").strip() or None
-CLAUDE_MODEL = (os.getenv("CLAUDE_MODEL") or "claude-sonnet-4-20250514").strip()
+CLAUDE_MODEL = (os.getenv("CLAUDE_MODEL") or "claude-sonnet-4-6").strip()
 MAX_TOKENS = 4000
 TEMPERATURE = 0.7
 
