@@ -21,6 +21,15 @@ logger = logging.getLogger(__name__)
 _client = None
 
 
+def _safe_error_detail(exc: Exception) -> str:
+    """Return useful provider diagnostics without leaking the API key."""
+    detail = str(exc).strip() or type(exc).__name__
+    if config.ANTHROPIC_API_KEY:
+        detail = detail.replace(config.ANTHROPIC_API_KEY, "[REDACTED]")
+    # Provider responses can be unexpectedly large; keep API/UI errors readable.
+    return detail[:1000]
+
+
 def _get_client():
     global _client
     if _client is None:
@@ -72,16 +81,19 @@ def chat_complete(
             return raw
         except Exception as e:
             last_exc = e
+            detail = _safe_error_detail(e)
             logger.warning(
-                "%s: Claude API attempt %s failed: %s",
+                "%s: Claude API attempt %s failed (%s): %s",
                 step_label,
                 attempt + 1,
-                e,
+                type(e).__name__,
+                detail,
             )
             if attempt == 0:
                 time.sleep(3)
             else:
                 raise RuntimeError(
-                    f"Claude API call failed after retry for {step_label}"
+                    f"Claude API call failed after retry for {step_label}: "
+                    f"{type(e).__name__}: {detail}"
                 ) from last_exc
     raise AssertionError("unreachable")

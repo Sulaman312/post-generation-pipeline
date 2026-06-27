@@ -18,6 +18,18 @@ function resolveApiBase() {
 
 const BASE = resolveApiBase();
 
+function isLocalBrowser() {
+  if (typeof window === "undefined") return false;
+  return ["localhost", "127.0.0.1", "::1"].includes(window.location.hostname);
+}
+
+function apiUnavailableMessage() {
+  if (isLocalBrowser()) {
+    return `Could not reach API at ${BASE || "same origin"}. From the repo root run: python main.py — then use the UI at http://localhost:3000`;
+  }
+  return `The deployed API at ${BASE || "the same origin"} could not be reached. The service may be restarting or temporarily unavailable; check the Koyeb service logs and health status.`;
+}
+
 const REQUEST_TIMEOUT_MS = 30000;
 /** Pipeline LLM steps can take several minutes. */
 const STEP_REQUEST_TIMEOUT_MS = 900000;
@@ -341,9 +353,7 @@ async function request(path, options = {}) {
     }
     const raw = e?.message || String(e);
     if (raw === "Failed to fetch" || e?.name === "TypeError") {
-      throw new Error(
-        `Could not reach API at ${BASE}. From the repo root run: python main.py — then use the UI at http://localhost:3000`
-      );
+      throw new Error(apiUnavailableMessage());
     }
     throw e;
   } finally {
