@@ -13,6 +13,10 @@ const envUrlRaw =
 
 function resolveApiBase() {
   if (envUrlRaw) return envUrlRaw.replace(/\/$/, "");
+  // Local dev: UI on :3000, Flask API on :8000 (see atlas-ui/.env).
+  if (process.env.NODE_ENV === "development") {
+    return "http://127.0.0.1:8000";
+  }
   return DEFAULT_BASE;
 }
 

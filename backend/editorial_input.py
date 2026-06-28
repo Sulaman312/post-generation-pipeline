@@ -189,6 +189,44 @@ def should_include_external_links(fields: dict | None) -> bool:
     return raw not in ("no", "false", "0", "skip", "off", "n")
 
 
+def notes_from_manual(manual: dict | None) -> str:
+    if not isinstance(manual, dict):
+        return ""
+    return (manual.get("Notes") or manual.get("notes") or "").strip()
+
+
+def notes_editorial_notice(manual: dict | None) -> str:
+    notes = notes_from_manual(manual)
+    if not notes:
+        return ""
+    return (
+        "\n\n=== EDITOR NOTES (MANDATORY — from article form) ===\n"
+        "The editor provided these constraints. They override generic defaults when they conflict.\n"
+        "Carry every requirement through the brief, outline, draft, and final output.\n\n"
+        f"{notes}\n"
+    )
+
+
+def seo_readability_notice() -> str:
+    """Shared SEO/readability rules injected from assignment brief through final output."""
+    return (
+        "\n\n=== SEO & READABILITY RULES (NON-NEGOTIABLE) ===\n"
+        "- **H1 title:** maximum **60 characters**; **5–12 words**; include the **primary keyword "
+        "once** (exact or near-exact). Shorter titles outperform in SERPs.\n"
+        "- **Keywords:** the primary keyword appears **once** in the H1. Each secondary keyword "
+        "appears **at most once** anywhere in the article (body or H2). No repetition or stuffing.\n"
+        "- **Length:** honor the form Word Count target. If SERP analysis shows top competitors are "
+        "shorter, write toward the **lower end** of the allowed range — cut filler, not value.\n"
+        "- **Links:** 3–5 working external authority links (`[anchor](https://…)`) woven inline; "
+        "2–4 internal cluster links. No broken URLs, bare URLs, or footer link dumps.\n"
+        "- **Images:** include **2–3** in-text image placeholders in the draft: "
+        "`![descriptive alt text](IMAGE: slug-or-description)` — alt text must describe the scene "
+        "for accessibility and SEO.\n"
+        "- **Tone:** keep brand voice consistent from intro through CTA — same formality, "
+        "perspective, and energy throughout.\n"
+    )
+
+
 def external_links_editorial_notice() -> str:
     return (
         "\n\n=== EXTERNAL AUTHORITY LINKS (REQUIRED FOR TRUST) ===\n"

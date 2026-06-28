@@ -24,6 +24,13 @@ OUTPUT FORMAT — follow exactly:
 SERP SNAPSHOT:
 [3–5 bullets — what “winning” content in this cluster looks like right now. Tie to the digest; no invented rankings.]
 
+COMPETITOR BENCHMARKS (readability & SERP):
+[From the SERP digest when available — otherwise mark VERIFY:]
+  - Typical word count of top-ranking articles: [range — e.g. 1,200–1,600 words]
+  - Typical title length: [character count + word count of 2–3 ranking titles]
+  - Do top results use in-text images/visuals? [yes/no + pattern]
+  - Recommendation: [write shorter than our default if competitors are lean; match depth, not padding]
+
 ALIGNMENT WITH TOPIC CARD:
 [1 short paragraph — confirm or tension between keyword/intent in the card vs what the SERP rewards.]
 
@@ -41,7 +48,7 @@ RISKS & LANDMINES:
 [3–5 bullets — factual areas to verify, overclaims to avoid, regulatory or “your mileage may vary” traps if any.]
 
 BRIEFING HOOKS FOR STEP 4 (ASSIGNMENT BRIEF):
-[4–6 imperative bullets the strategist writing the brief should not miss — e.g. “Require a decision framework, not a feature list.”]
+[4–6 imperative bullets the strategist writing the brief should not miss — e.g. “Require a decision framework, not a feature list.” Include title length (≤60 chars, 5–12 words), keyword-once rule, image placements, and competitor word-count target when known.]
 
 EXTERNAL SOURCES TO CITE (for writer trust & E-E-A-T):
 [List 5–8 bullets — each: **Source name** — what claim or section it supports — **full URL** from the SERP digest when present. If the digest has no URLs, list publisher names and mark URL as VERIFY. Do not invent https links.]

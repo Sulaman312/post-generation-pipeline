@@ -18,7 +18,7 @@ BEFORE YOU OUTPUT — do this thinking first (do not include in output):
 OUTPUT FORMAT — follow exactly:
 
 ---OUTLINE START---
-H1: [exact article title from the brief — do not modify]
+H1: [exact article title from the brief — do not modify; must be ≤60 characters and 5–12 words]
 
 INTRO NOTE: [2–3 sentences describing what the intro must accomplish.
 Do NOT write the intro. Describe: what specific problem or tension it opens with,
@@ -33,8 +33,9 @@ H2: [Section Title — must match or improve on brief's suggested structure]
     - [specific point — concrete, not a topic header]
   PROOF POINT SLOT: [yes / no — if yes, note which company case study or stat slots here]
   EXTERNAL CITE SLOT: [yes / no — if yes, name the source type + suggested publisher/URL from SERP analysis]
+  IMAGE SLOT: [yes / no — if yes, describe what visual belongs here + alt-text direction; spread 2–3 images across the article]
   FORMAT: [paragraph / numbered list / bullet list / short paragraphs with subheads]
-  WORD COUNT: [specific range — e.g. 180–220 words]
+  WORD COUNT: [specific range — e.g. 180–220 words; keep section totals lean if competitors run shorter]
 
 [Repeat H2 block for each section — 4–6 sections total]
 
@@ -62,7 +63,8 @@ what emotion or next-step clarity the reader leaves with,
 and how the final sentence sets up the CTA naturally.]
 
 CTA NOTE: [exact placement + type (soft/direct/both) + what the CTA asks the reader to do]
-TOTAL ESTIMATED WORD COUNT: [sum of all sections + intro + conclusion — must match brief target ±10%]
+IMAGE PLAN: [2–3 placements — section + alt text + `![alt](IMAGE: slug)` slug for each]
+TOTAL ESTIMATED WORD COUNT: [sum of all sections + intro + conclusion — must match brief target ±10%; prefer lower end when SERP competitors are shorter]
 ---OUTLINE END---
 
 RULES:
@@ -76,5 +78,7 @@ RULES:
 - FAQ is required (separate FAQ SECTION block) — place after main H2s, before conclusion in the draft
 - FAQ word count is **not** included in TOTAL ESTIMATED WORD COUNT (body prose only)
 - PROOF POINT SLOT must be used where company context is available — do not leave it empty
+- Plan **2–3 IMAGE SLOT** entries across H2 sections — not all in one place
+- H1 must stay ≤60 characters and 5–12 words — do not lengthen the brief title
 - Do not add sections the brief did not call for without flagging them as additions
 - Output ONLY the outline. No preamble. No commentary after.

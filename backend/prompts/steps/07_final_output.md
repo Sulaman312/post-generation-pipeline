@@ -72,37 +72,53 @@ TASK 2B — EXTERNAL AUTHORITY LINKS (authenticity / E-E-A-T)
    Count markdown links whose URL is `http://` or `https://` and is **not** a placeholder.
    Update EXTERNAL LINKS ADDED in metadata to that count.
 
-TASK 3 — FINAL SEO CHECK
+TASK 3 — FINAL SEO & READABILITY CHECK
   Run through this checklist in order. Fix any item that fails — minimal edit only.
-  [ ] H1 contains the primary keyword — exact or near-exact match
-  [ ] Primary keyword appears in the first 100 words of the article body (not the title)
-  [ ] Meta description is present — between 150–160 characters, contains primary keyword
+  [ ] H1 is **≤60 characters** and **5–12 words** — shorten if needed; note character count
+  [ ] H1 contains the primary keyword **once** (exact or near-exact) — not repeated in H1
+  [ ] Primary keyword appears **once** in the first 100 words of body (H1 does not count)
+  [ ] Each secondary keyword appears **at most once** in the full article — remove duplicates
+  [ ] Meta description is present — between 150–160 characters, primary keyword once
   [ ] At least one H2 contains a secondary keyword — natural placement only
-  [ ] No keyword stuffing — primary keyword should appear naturally, not forced repeatedly
+  [ ] No keyword stuffing — if a keyword appears twice, replace the second with a synonym
+  [ ] Article body is not bloated vs SERP norms — trim redundant sentences if over word-count high end
+  [ ] **2–3** in-text image placeholders present: `![alt](IMAGE: …)` with descriptive alt text
+  [ ] External links: **3–5** valid inline `https://` markdown links; fix broken/bare URLs
+  [ ] Internal links: **2–4** valid `](INTERNAL:` placeholders; no duplicate clusters
   [ ] Article has a clear H1 → H2 hierarchy (no H3s without a parent H2)
   [ ] FAQ section present: H2 "Frequently Asked Questions" with at least 5 H3 Q&As — if missing, add a minimal FAQ block from the article topic (do not rewrite body sections)
+  [ ] Tone is consistent throughout — no mid-article shift in formality or voice
 
 OUTPUT FORMAT — follow exactly:
 
 ---PUBLISHING METADATA START---
-H1 TITLE: [final title — unchanged from article unless SEO fix required]
+H1 TITLE: [final title — max 60 characters, 5–12 words; fix if SEO check failed]
+H1 CHARACTER COUNT: [number]
+H1 WORD COUNT: [number]
 META DESCRIPTION: [150–160 characters — count exactly]
 PRIMARY KEYWORD: [from brief]
 SECONDARY KEYWORDS: [comma separated, from brief]
-ESTIMATED WORD COUNT: [count the article body — exclude metadata block]
+ESTIMATED WORD COUNT: [count the article body — exclude metadata block and FAQ]
+IMAGE PLACEHOLDERS: [count of `![` or `](IMAGE:` in body]
 INTERNAL LINKS ADDED: [count]
 EXTERNAL LINKS ADDED: [count of https markdown links to third-party sites]
 CTA PLACEMENT: [mid-article / end / both — specify which type at each location]
 FAQ COUNT: [number of H3 questions under the FAQ H2]
 FAQ SCHEMA NOTE: [ContentFlow auto-generates FAQPage JSON-LD after this step — list H3 questions for reference]
 SEO CHECK RESULTS:
-  H1 keyword match: [PASS / FIXED — note what changed]
-  Keyword in first 100 words: [PASS / FIXED — note what changed]
+  H1 length (≤60 chars, 5–12 words): [PASS / FIXED — note what changed]
+  H1 keyword match (once): [PASS / FIXED — note what changed]
+  Keyword in first 100 words (once): [PASS / FIXED — note what changed]
+  Secondary keywords (each once max): [PASS / FIXED — note what changed]
   Meta description: [PASS / FIXED — note what changed]
   H2 secondary keyword: [PASS / FIXED — note what changed]
-  Keyword density: [PASS / NOTE — note if borderline]
+  Article length vs target: [PASS / TRIMMED — note if sentences cut]
+  In-text images (2–3): [PASS / ADDED — note if placeholders inserted]
+  External links (3–5 valid): [PASS / FIXED — note broken links repaired]
+  Internal links (2–4 valid): [PASS / FIXED — note what changed]
   H1→H2 hierarchy: [PASS / FIXED — note what changed]
   FAQ section: [PASS / ADDED — note if you inserted FAQ]
+  Tone consistency: [PASS / NOTE — flag only if a section clearly breaks voice]
 STATUS: READY FOR CMS
 ---PUBLISHING METADATA END---
 
@@ -111,9 +127,12 @@ STATUS: READY FOR CMS
 ---FINAL ARTICLE END---
 
 RULES:
-- Do NOT rewrite any content — only add CTAs, links, and make minimal SEO fixes
+- Do NOT rewrite any content — only add CTAs, links, images, trim filler, and make minimal SEO fixes
+- H1 hard limits: **60 characters**, **5–12 words**, primary keyword **once**
+- Each target keyword (primary + secondaries) appears **at most once** in the full article — dedupe
 - Maximum 4 internal links — more feels spammy and dilutes link equity
 - Target 3–5 external authority links — real URLs only, from the sources block in the user message
+- Target 2–3 in-text image placeholders with descriptive alt text
 - If no SEO issues are found, write PASS for each item — do not skip the checklist
 - Meta description character count is a hard constraint — 150–160, no exceptions
 - Output metadata block first, then the full article. No preamble. No commentary after.

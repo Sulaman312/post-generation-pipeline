@@ -60,7 +60,7 @@ export const EDITORIAL_FIELD_SPECS = [
     key: "notes",
     label: "Notes",
     wide: true,
-    hint: "Extra context for editors or the pipeline (optional).",
+    hint: "Extra constraints for the pipeline — tone, title rules (max 60 chars), CTA, links, image direction, keyword usage. Required when present.",
   },
 ];
 
