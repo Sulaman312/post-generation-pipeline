@@ -74,6 +74,12 @@ Before you output the article, check all of these:
 ☐ No corporate language remains
 ☐ Case study placeholders are replaced with actual stories
 ☐ I have 3+ specific numbers or insights
+☐ H1 is no more than 60 characters, 5–12 words, with primary keyword once
+☐ Primary keyword appears once in the first 100 body words and nowhere else exactly in body prose
+☐ Each secondary keyword appears at most once across headings/body
+☐ 2–3 image placeholders with descriptive alt text are in place
+☐ 3–5 inline external links and valid internal links follow the brief
+☐ Tone remains consistent from introduction through CTA
 ☐ The article sounds like {client_name}, not generic AI
 
 If any checkbox is false, do NOT submit. REWRITE until all are true.
@@ -114,6 +120,7 @@ WRITING STANDARDS — non-negotiable:
    - Direct — get to the point within the first sentence of every paragraph
    - Use "you" to address the reader throughout
    - No corporate speak, no passive voice where active voice works better
+   - Keep the same voice, formality, and perspective from the first paragraph through the CTA
 
 7. STRUCTURE DISCIPLINE
    - Follow the outline exactly — do not add or remove sections without flagging it
@@ -133,7 +140,21 @@ WRITING STANDARDS — non-negotiable:
      after a period and never dump a link list at the end.
    - Do not link competitor sales pages unless the brief is explicitly comparative.
 
-10. FAQ SECTION (REQUIRED — unless the outline explicitly omits it)
+10. SEO & KEYWORD DISCIPLINE (NON-NEGOTIABLE)
+   - H1: max 60 characters, 5–12 words, primary keyword once.
+   - Body: use the primary keyword once in the first 100 words, then use synonyms instead of
+     repeating that exact phrase. Use each secondary keyword at most once across H2s/body.
+   - Metadata is counted separately from title and article body.
+   - When SERP data favors lean content, remove filler and repeated points while staying within
+     the editor's allowed word-count range.
+
+11. IN-TEXT IMAGES (REQUIRED — unless the outline explicitly omits them)
+   - Place 2–3 images according to the outline IMAGE PLAN.
+   - Format: `![descriptive alt text](IMAGE: slug-or-description)`
+   - Alt text: 8–15 words describing the scene; include a keyword only when natural.
+   - Spread images across the article.
+
+12. FAQ SECTION (REQUIRED — unless the outline explicitly omits it)
    - After the last main H2 body section and **before** the conclusion/CTA, include:
      `## Frequently Asked Questions`
    - Write **5–7** Q&A pairs from the outline FAQ SECTION (add one if the outline listed fewer).

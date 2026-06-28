@@ -96,8 +96,18 @@ def _external_links_notice_for_run(client_id: str, run_id: str) -> str:
 
 
 def _editorial_notices_for_run(client_id: str, run_id: str) -> str:
-    return _faq_notice_for_run(client_id, run_id) + _external_links_notice_for_run(
-        client_id, run_id
+    manifest = artifacts.read_run_manifest(client_id, run_id) or {}
+    manual = manifest.get("manual_inputs")
+    notes = (
+        editorial_input.notes_editorial_notice(manual)
+        if isinstance(manual, dict)
+        else ""
+    )
+    return (
+        notes
+        + editorial_input.seo_readability_notice()
+        + _faq_notice_for_run(client_id, run_id)
+        + _external_links_notice_for_run(client_id, run_id)
     )
 
 
@@ -251,6 +261,9 @@ def run_step_1(client_id: str, run_id: str, previous_artifact: str = "") -> str:
         else ""
     )
     user_msg = (built or previous_artifact or "").strip()
+    if isinstance(manual, dict):
+        user_msg += editorial_input.notes_editorial_notice(manual)
+    user_msg += editorial_input.seo_readability_notice()
     if wc_target:
         user_msg += editorial_input.mandatory_word_count_notice(wc_target)
 

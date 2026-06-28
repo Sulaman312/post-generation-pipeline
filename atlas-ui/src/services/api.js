@@ -13,6 +13,9 @@ const envUrlRaw =
 
 function resolveApiBase() {
   if (envUrlRaw) return envUrlRaw.replace(/\/$/, "");
+  if (process.env.NODE_ENV === "development") {
+    return "http://127.0.0.1:8000";
+  }
   return DEFAULT_BASE;
 }
 

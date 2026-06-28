@@ -189,6 +189,44 @@ def should_include_external_links(fields: dict | None) -> bool:
     return raw not in ("no", "false", "0", "skip", "off", "n")
 
 
+def notes_from_manual(manual: dict | None) -> str:
+    if not isinstance(manual, dict):
+        return ""
+    return (manual.get("Notes") or manual.get("notes") or "").strip()
+
+
+def notes_editorial_notice(manual: dict | None) -> str:
+    notes = notes_from_manual(manual)
+    if not notes:
+        return ""
+    return (
+        "\n\n=== EDITOR NOTES (MANDATORY - from article form) ===\n"
+        "These constraints override generic defaults when they conflict. "
+        "Carry every requirement through the brief, outline, draft, and final output.\n\n"
+        f"{notes}\n"
+    )
+
+
+def seo_readability_notice() -> str:
+    """Shared SEO/readability rules injected from brief through final output."""
+    return (
+        "\n\n=== SEO & READABILITY RULES (NON-NEGOTIABLE) ===\n"
+        "- **H1 title:** maximum **60 characters**, **5-12 words**, with the primary keyword "
+        "once (exact or near-exact).\n"
+        "- **Body keyword use:** use the primary keyword once in the first 100 body words and "
+        "do not repeat that exact phrase elsewhere in body prose. Use each secondary keyword "
+        "at most once across headings and body prose. Metadata is counted separately.\n"
+        "- **Length:** honor the form Word Count target. When competitors are lean, write toward "
+        "the lower end of the allowed range by cutting filler, not useful detail.\n"
+        "- **Links:** weave 3-5 working external authority links and 2-4 internal cluster links "
+        "inline. Do not use broken URLs, bare URLs, or footer link dumps.\n"
+        "- **Images:** include 2-3 in-text placeholders formatted as "
+        "`![descriptive alt text](IMAGE: slug-or-description)`.\n"
+        "- **Tone:** keep brand voice, formality, perspective, and energy consistent from the "
+        "introduction through the CTA.\n"
+    )
+
+
 def external_links_editorial_notice() -> str:
     return (
         "\n\n=== EXTERNAL AUTHORITY LINKS (REQUIRED FOR TRUST) ===\n"

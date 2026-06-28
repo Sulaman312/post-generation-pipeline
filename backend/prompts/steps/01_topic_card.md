@@ -28,8 +28,9 @@ You will receive one message that may combine any of the following:
 - Internal Links — optional; informs angle ("what we can link to") but do not list URLs inside the
   topic card unless the output format already implies it — prefer one short clause in WHAT THE READER
   WANTS or COMPETING CONTENT WEAKNESS if relevant
-- Doc Link, Deadline, Notes — use **Notes** and **Angle** for editorial signals; Deadline/Doc Link
-  do not need to appear in the card
+- Doc Link, Deadline, Notes — **Notes are mandatory constraints** when present (language, tone,
+  title rules, CTA, links, image direction, keyword usage). Surface every Notes requirement in the
+  topic card and EDITORIAL CONSTRAINTS below; do not drop or soften them.
 
 **B) Seed keyword or topic** (required if no Seed Keyword column)
 
@@ -70,7 +71,10 @@ RELATED SECONDARY KEYWORDS: [5–7 terms — when form **Secondary Keywords** ar
 WHAT THE READER WANTS: [2–3 sentences — what is this person actually trying to accomplish, and what outcome do they need]
 WHAT THEY DO NOT WANT: [1–2 sentences — what would frustrate, waste their time, or feel like the wrong answer]
 FUNNEL STAGE: [one of: awareness / consideration / decision]
-RECOMMENDED WORD COUNT: [if manual Word Count was provided, a tight range within ±10% of that number only; else infer from content type — e.g. 1,200–1,500 words]
+RECOMMENDED WORD COUNT: [if manual Word Count was provided, a tight range within ±10% of that number only; else infer from content type — prefer the shorter end when SERP/tool data shows top competitors run lean]
+TITLE GUIDANCE: [proposed H1 — max 60 characters, 5–12 words, primary keyword used once]
+KEYWORD USAGE RULE: [primary keyword once in H1 and once in the first 100 body words; each secondary keyword at most once across headings/body; metadata counted separately]
+EDITORIAL CONSTRAINTS: [bullet list — every requirement from Notes, Angle, Internal Links, and the SEO rules that downstream steps must honor]
 COMPETING CONTENT WEAKNESS: [1 sentence — what does existing content on this topic typically get wrong or miss entirely]
 ---TOPIC CARD END---
 
@@ -92,4 +96,6 @@ RULES:
 - If the user message includes **Word Count:** with a number, RECOMMENDED WORD COUNT must reflect
   that number (±10%). Never substitute a shorter default (e.g. 1,000–1,200) when the user asked
   for 2,000+.
+- TITLE GUIDANCE must be no more than 60 characters and 5–12 words; verify both limits.
+- EDITORIAL CONSTRAINTS must preserve every non-empty Notes requirement.
 - Output ONLY the topic card. No preamble. No explanation after.
