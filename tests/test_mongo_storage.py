@@ -132,6 +132,29 @@ class MongoStorageTests(unittest.TestCase):
             (config.CLIENTS_DIR / "client-a/logo.png").read_bytes(), b"png-data"
         )
 
+    def test_startup_hydration_retries_transient_connection_failure(self):
+        with (
+            patch(
+                "backend.mongo_storage.hydrate_cache",
+                side_effect=[RuntimeError("temporary TLS failure"), 12],
+            ) as hydrate,
+            patch("backend.mongo_storage._reset_connection") as reset,
+            patch("backend.mongo_storage.time.sleep") as sleep,
+            patch.dict(
+                "os.environ",
+                {
+                    "MONGODB_STARTUP_ATTEMPTS": "2",
+                    "MONGODB_RETRY_DELAY_SECONDS": "0.25",
+                },
+            ),
+        ):
+            hydrated = mongo_storage.initialize_runtime_cache()
+
+        self.assertEqual(hydrated, 12)
+        self.assertEqual(hydrate.call_count, 2)
+        reset.assert_called_once_with()
+        sleep.assert_called_once_with(0.25)
+
     def test_flask_mutations_are_written_through(self):
         from backend.app import create_app
 

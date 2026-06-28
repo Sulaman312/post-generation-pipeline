@@ -12,6 +12,7 @@ import mimetypes
 import os
 import shutil
 import threading
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Callable
@@ -33,12 +34,26 @@ def enabled() -> bool:
     return bool(config.MONGODB_URI)
 
 
+def _reset_connection() -> None:
+    global _client, _db, _bucket, _files
+    if _client is not None:
+        try:
+            _client.close()
+        except Exception:
+            logger.debug("Could not close failed MongoDB client", exc_info=True)
+    _client = None
+    _db = None
+    _bucket = None
+    _files = None
+
+
 def _connect():
     global _client, _db, _bucket, _files
     if not enabled():
         raise RuntimeError("MONGODB_URI is not configured")
     if _client is None:
         try:
+            import certifi
             from gridfs import GridFSBucket
             from pymongo import MongoClient
         except ImportError as exc:
@@ -47,14 +62,23 @@ def _connect():
             ) from exc
 
         timeout_ms = int(os.getenv("MONGODB_TIMEOUT_MS") or "10000")
-        _client = MongoClient(
-            config.MONGODB_URI,
-            serverSelectionTimeoutMS=timeout_ms,
-            connectTimeoutMS=timeout_ms,
-            appname="contentflow",
-        )
-        _client.admin.command("ping")
-        _db = _client[config.MONGODB_DB]
+        options = {
+            "serverSelectionTimeoutMS": timeout_ms,
+            "connectTimeoutMS": timeout_ms,
+            "appname": "contentflow",
+        }
+        if config.MONGODB_URI.startswith("mongodb+srv://"):
+            options["tlsCAFile"] = certifi.where()
+
+        candidate = MongoClient(config.MONGODB_URI, **options)
+        try:
+            candidate.admin.command("ping")
+        except Exception:
+            candidate.close()
+            raise
+
+        _client = candidate
+        _db = candidate[config.MONGODB_DB]
         _bucket = GridFSBucket(_db, bucket_name="app_blobs")
         _files = _db["app_files"]
         _files.create_index("path", unique=True)
@@ -248,4 +272,31 @@ def initialize_runtime_cache() -> int:
     if not enabled():
         logger.info("MongoDB persistence disabled; using %s", config.CLIENTS_DIR)
         return 0
-    return hydrate_cache(clear=True)
+
+    try:
+        attempts = max(1, int(os.getenv("MONGODB_STARTUP_ATTEMPTS") or "3"))
+        retry_delay = max(0.0, float(os.getenv("MONGODB_RETRY_DELAY_SECONDS") or "2"))
+    except ValueError as exc:
+        raise RuntimeError("Invalid MongoDB startup retry configuration") from exc
+
+    for attempt in range(1, attempts + 1):
+        try:
+            return hydrate_cache(clear=True)
+        except Exception:
+            _reset_connection()
+            if attempt == attempts:
+                logger.exception(
+                    "MongoDB startup hydration failed after %s attempts",
+                    attempts,
+                )
+                raise
+            logger.warning(
+                "MongoDB startup hydration failed (attempt %s/%s); retrying in %.1fs",
+                attempt,
+                attempts,
+                retry_delay,
+                exc_info=True,
+            )
+            time.sleep(retry_delay)
+
+    raise RuntimeError("MongoDB startup hydration failed")
