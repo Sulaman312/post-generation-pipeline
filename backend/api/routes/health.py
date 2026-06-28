@@ -1,6 +1,7 @@
 from flask import Response, jsonify, request
 
 from backend import config
+from backend import mongo_storage
 from backend.api.blueprint import api_bp
 
 
@@ -12,7 +13,12 @@ def context_files_catalog():
 
 @api_bp.get("/health")
 def health():
-    return jsonify(ok=True, service="ContentFlow API")
+    return jsonify(
+        ok=True,
+        service="ContentFlow API",
+        persistence="mongodb" if mongo_storage.enabled() else "filesystem",
+        database=config.MONGODB_DB if mongo_storage.enabled() else None,
+    )
 
 
 @api_bp.get("/api")

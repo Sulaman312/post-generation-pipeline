@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from backend import config  # noqa: E402
+from backend import config, mongo_storage  # noqa: E402
 from backend.integrations.figma_templates import import_social_template  # noqa: E402
 
 
@@ -38,6 +38,8 @@ def _choose_client(clients: list[str]) -> str:
 
 
 def main() -> int:
+    if mongo_storage.enabled():
+        mongo_storage.initialize_runtime_cache()
     clients = _clients()
     if not clients:
         print(f"No clients found in {config.CLIENTS_DIR}")
@@ -65,7 +67,13 @@ def main() -> int:
         print(f"\nImport failed: {type(e).__name__}: {e}")
         return 1
 
-    rel = out_path.relative_to(config.REPO_ROOT)
+    if mongo_storage.enabled():
+        mongo_storage.sync_cache()
+
+    try:
+        rel = out_path.relative_to(config.REPO_ROOT)
+    except ValueError:
+        rel = out_path
     print("\nImported template:")
     print(f"  {rel}")
     print(f"  {rel.parent / 'assets'}")

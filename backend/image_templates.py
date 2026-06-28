@@ -58,6 +58,14 @@ def client_template_path(client_id: str, template_id: str = DEFAULT_TEMPLATE_ID)
     return client_template_dir(client_id, template_id) / "template.json"
 
 
+def _source_template_label(path: Path) -> str:
+    try:
+        return str(path.relative_to(config.REPO_ROOT))
+    except ValueError:
+        # Mongo mode hydrates client data into a disposable cache outside the repo.
+        return str(Path("clients") / path.relative_to(config.CLIENTS_DIR))
+
+
 def run_template_path(client_id: str, run_id: str) -> Path:
     root = artifacts.get_run_dir(client_id, run_id) / "images"
     root.mkdir(parents=True, exist_ok=True)
@@ -97,7 +105,9 @@ def save_run_template(
         "version": 1,
         "template_id": template_id,
         "template_name": _template_display_name(client_id, template_id, spec),
-        "source_template": str(client_template_path(client_id, template_id).relative_to(config.REPO_ROOT)),
+        "source_template": _source_template_label(
+            client_template_path(client_id, template_id)
+        ),
         "headline": {"lines": lines},
         "formats": spec.get("formats") if isinstance(spec.get("formats"), dict) else {},
         "created_at": datetime.now().isoformat(timespec="seconds"),

@@ -18,7 +18,7 @@ COPY backend/requirements.txt backend/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend/ backend/
-COPY clients/ clients/
+COPY scripts/ scripts/
 COPY main.py ./
 COPY --from=ui-build /app/atlas-ui/build atlas-ui/build
 

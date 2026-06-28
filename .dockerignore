@@ -21,5 +21,8 @@ atlas-ui/build/
 atlas-ui/.env
 atlas-ui/.env.*
 
+# Client data is hydrated from MongoDB at runtime.
+clients/
+
 *.log
 .DS_Store

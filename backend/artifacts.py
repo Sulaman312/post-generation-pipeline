@@ -2,8 +2,10 @@ import base64
 import binascii
 import json
 import logging
+import os
 import re
 import shutil
+import threading
 from datetime import datetime
 from pathlib import Path
 
@@ -11,6 +13,13 @@ from . import config
 from . import editorial_input
 
 logger = logging.getLogger(__name__)
+
+
+def _write_json_atomic(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temp = path.with_name(f".{path.name}.{threading.get_ident()}.tmp")
+    temp.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    os.replace(temp, path)
 
 ARTIFACTS_INDEX_FILENAME = "artifacts_index.json"
 _MAX_RUN_LOGO_BYTES = 2 * 1024 * 1024
@@ -351,7 +360,7 @@ def set_run_logo_file(client_id: str, run_id: str, logo_file: str) -> None:
         return
     manifest_path = get_run_dir(client_id, run_id) / "run_manifest.json"
     data["logo_file"] = logo_file
-    manifest_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    _write_json_atomic(manifest_path, data)
 
 
 def save_artifact(client_id: str, run_id: str, step_name: str, content: str) -> Path:
@@ -548,6 +557,7 @@ def save_run_manifest(
     target_word_count: int | None = None,
     step_timings: dict | None = None,
     context_summary: str | None = None,
+    step_errors: dict | None = None,
 ) -> None:
     run_dir = get_run_dir(client_id, run_id)
     manifest_path = run_dir / "run_manifest.json"
@@ -557,6 +567,8 @@ def save_run_manifest(
     prev_archived = False
     prev_archived_at: str | None = None
     prev_context_summary: str | None = None
+    prev_step_errors: dict | None = None
+    prev: dict = {}
     if manifest_path.is_file():
         try:
             prev = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -572,6 +584,8 @@ def save_run_manifest(
             prev_archived_at = at if isinstance(at, str) and at.strip() else None
             pcs = prev.get("context_summary")
             prev_context_summary = pcs if isinstance(pcs, str) and pcs.strip() else None
+            pse = prev.get("step_errors")
+            prev_step_errors = pse if isinstance(pse, dict) else None
         except json.JSONDecodeError:
             pass
 
@@ -606,7 +620,10 @@ def save_run_manifest(
     cs = context_summary if context_summary is not None else prev_context_summary
     if cs:
         payload["context_summary"] = cs
-    manifest_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    errors = step_errors if step_errors is not None else prev_step_errors
+    if errors:
+        payload["step_errors"] = errors
+    _write_json_atomic(manifest_path, payload)
 
 
 def read_run_manifest(client_id: str, run_id: str) -> dict | None:
@@ -665,9 +682,7 @@ def ensure_run_manifest(client_id: str, run_id: str) -> dict | None:
             before = data.get("topic")
             data = _repair_manifest_topic_if_needed(data, run_dir)
             if data.get("topic") != before:
-                manifest_path.write_text(
-                    json.dumps(data, indent=2), encoding="utf-8"
-                )
+                _write_json_atomic(manifest_path, data)
             return data
         except json.JSONDecodeError:
             logger.warning("Corrupt manifest for %s/%s; rebuilding", client_id, run_id)
@@ -681,7 +696,7 @@ def ensure_run_manifest(client_id: str, run_id: str) -> dict | None:
         "timestamp": datetime.now().isoformat(),
         "archived": False,
     }
-    manifest_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    _write_json_atomic(manifest_path, data)
     return data
 
 
@@ -696,7 +711,7 @@ def set_run_archived(client_id: str, run_id: str, archived: bool = True) -> bool
         data["archived_at"] = datetime.now().isoformat()
     else:
         data.pop("archived_at", None)
-    manifest_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    _write_json_atomic(manifest_path, data)
     return True
 
 

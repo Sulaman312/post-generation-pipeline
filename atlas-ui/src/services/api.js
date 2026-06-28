@@ -33,6 +33,26 @@ function apiUnavailableMessage() {
 const REQUEST_TIMEOUT_MS = 30000;
 /** Pipeline LLM steps can take several minutes. */
 const STEP_REQUEST_TIMEOUT_MS = 900000;
+const STEP_POLL_INTERVAL_MS = 2000;
+
+function delay(ms, signal) {
+  return new Promise((resolve, reject) => {
+    if (signal?.aborted) {
+      reject(new Error("Stopped by user."));
+      return;
+    }
+    const timer = setTimeout(() => {
+      signal?.removeEventListener("abort", onAbort);
+      resolve();
+    }, ms);
+    function onAbort() {
+      clearTimeout(timer);
+      signal?.removeEventListener("abort", onAbort);
+      reject(new Error("Stopped by user."));
+    }
+    signal?.addEventListener("abort", onAbort, { once: true });
+  });
+}
 
 export const DEV_FLASK_ORIGIN = BASE;
 
@@ -479,10 +499,41 @@ export async function deleteRun(clientId, runId) {
   return runArticleAction(clientId, runId, "delete");
 }
 
-export async function getRun(clientId, runId) {
+export async function getRun(clientId, runId, signal = null) {
   return request(
-    `/clients/${encodeURIComponent(clientId)}/runs/${encodeURIComponent(runId)}`
+    `/clients/${encodeURIComponent(clientId)}/runs/${encodeURIComponent(runId)}`,
+    { signal }
   );
+}
+
+async function waitForStep(clientId, runId, stepName, signal) {
+  const deadline = Date.now() + STEP_REQUEST_TIMEOUT_MS;
+  let consecutiveFailures = 0;
+  while (Date.now() < deadline) {
+    await delay(STEP_POLL_INTERVAL_MS, signal);
+    let run;
+    try {
+      run = await getRun(clientId, runId, signal);
+      consecutiveFailures = 0;
+    } catch (error) {
+      const message = error?.message || String(error);
+      if (message === "Stopped by user.") throw error;
+      consecutiveFailures += 1;
+      if (consecutiveFailures >= 3) throw error;
+      continue;
+    }
+    const status = run?.statuses?.[stepName] || "pending";
+    if (status === "done") return run;
+    if (status === "error") {
+      throw new Error(
+        run?.step_errors?.[stepName] || `Step ${stepName} failed.`
+      );
+    }
+    if (status === "pending" || status === "skipped") {
+      throw new Error(`Step ${stepName} was cancelled.`);
+    }
+  }
+  throw new Error(`Step ${stepName} did not finish within 15 minutes.`);
 }
 
 export async function getArtifact(clientId, runId, stepName) {
@@ -547,7 +598,7 @@ export async function runStep(
   previousArtifact,
   signal
 ) {
-  return request(
+  const result = await request(
     `/clients/${encodeURIComponent(clientId)}/runs/${encodeURIComponent(
       runId
     )}/steps/${encodeURIComponent(stepName)}`,
@@ -559,6 +610,10 @@ export async function runStep(
       timeoutMs: STEP_REQUEST_TIMEOUT_MS,
     }
   );
+  if (result?.accepted) {
+    await waitForStep(clientId, runId, stepName, signal);
+  }
+  return result;
 }
 
 export async function cancelStep(clientId, runId, stepName) {

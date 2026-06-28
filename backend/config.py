@@ -1,4 +1,5 @@
 import os
+import tempfile
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -22,8 +23,20 @@ CLAUDE_MODEL = (os.getenv("CLAUDE_MODEL") or "claude-sonnet-4-6").strip()
 MAX_TOKENS = 4000
 TEMPERATURE = 0.7
 
+MONGODB_URI = (os.getenv("MONGODB_URI") or "").strip() or None
+MONGODB_DB = (
+    os.getenv("MONGODB_DB") or "post_generation_pipeline"
+).strip() or "post_generation_pipeline"
+
 _clients_override = (os.getenv("CLIENTS_DATA_DIR") or "").strip()
-if _clients_override:
+_mongo_cache_override = (os.getenv("MONGODB_CACHE_DIR") or "").strip()
+if MONGODB_URI:
+    # Never hydrate over the repository's seed data. Mongo uses an isolated cache.
+    CLIENTS_DIR = Path(
+        _mongo_cache_override
+        or (Path(tempfile.gettempdir()) / "contentflow-clients")
+    ).resolve()
+elif _clients_override:
     _clients_path = Path(_clients_override)
     if not _clients_path.is_absolute():
         _clients_path = (REPO_ROOT / _clients_path).resolve()
