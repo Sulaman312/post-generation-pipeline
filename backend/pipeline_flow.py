@@ -1,0 +1,52 @@
+"""Helpers for step order and resolving pipeline input (including legacy skipped steps)."""
+
+from __future__ import annotations
+
+from .pipeline import STEP_ORDER as _ARTICLE_STEP_ORDER
+
+
+def input_source_for_step(
+    step_name: str,
+    statuses: dict[str, str],
+    *,
+    step_order: list[str] | None = None,
+) -> tuple[str | None, str]:
+    """
+    What feeds ``step_name``'s input.
+
+    Returns ``(source_step_key, kind)`` where *kind* is:
+    - ``artifact`` — load ``source_step_key`` output
+    - ``topic`` — use run topic / manual inputs (first step)
+    - ``blocked`` — a required prior step is still pending
+    """
+    order = step_order or _ARTICLE_STEP_ORDER
+    try:
+        idx = order.index(step_name)
+    except ValueError:
+        return None, "blocked"
+
+    for i in range(idx - 1, -1, -1):
+        prev = order[i]
+        st = statuses.get(prev, "pending")
+        if st == "done":
+            return prev, "artifact"
+        if st == "skipped":
+            continue
+        return None, "blocked"
+
+    return None, "topic"
+
+
+def can_run_step(
+    step_name: str,
+    statuses: dict[str, str],
+    *,
+    has_topic: bool,
+    step_order: list[str] | None = None,
+) -> bool:
+    _src, kind = input_source_for_step(step_name, statuses, step_order=step_order)
+    if kind == "blocked":
+        return False
+    if kind == "topic":
+        return has_topic
+    return True
