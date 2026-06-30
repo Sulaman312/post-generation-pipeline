@@ -1,0 +1,73 @@
+{
+  "client_id": "Simonetti",
+  "run_id": "2026-06-20_00-00-55",
+  "pipeline_id": "social_media",
+  "topic": "Custom glass solutions for interiors: show how Simonetti Fr\u00e8res helps clients personalise a space with glass elements that are both elegant and practical.",
+  "statuses": {
+    "client_profile_topic": "done",
+    "content_angle_intent": "done",
+    "image_prompt": "done",
+    "image_generation": "done",
+    "image_formats": "done",
+    "image_template": "done",
+    "captions": "done",
+    "review_checklist": "done"
+  },
+  "timestamp": "2026-06-20T00:07:16.076398",
+  "archived": false,
+  "manual_inputs": {
+    "paragraph": "Custom glass solutions for interiors: show how Simonetti Fr\u00e8res helps clients personalise a space with glass elements that are both elegant and practical.",
+    "additional_details": "Focus on bespoke glass for home and professional interiors: shower partitions, glass railings, interior partitions, glazed doors, mirrors, and sandblasted glass for\n  privacy.\n\n  Tone should be professional, local, and reassuring. Emphasize personalised advice, precise measurement, careful installation, and a finish adapted to the client\u2019s\n  space.\n\n  The post should make people understand that custom glass is not only decorative: it helps bring light, structure a room, preserve privacy, secure a space, and\n  modernise an interior.\n\n  CTA: invite people to contact Simonetti Fr\u00e8res to discuss a project or request a quote.\n\n  Website: https://www.simonetti-vitrerie-miroiterie.ch/\n\n  Suggested image direction if the flow asks for visual guidance:\n\n  A bright modern interior with custom glass elements, such as a glass partition or shower glass, clean lines, elegant Swiss home renovation style, natural light,\n  premium craftsmanship, realistic photography."
+  },
+  "step_timings": {
+    "client_profile_topic": {
+      "started_at": "2026-06-20T00:00:56.553",
+      "finished_at": "2026-06-20T00:01:04.684",
+      "duration_ms": 8131,
+      "status": "done"
+    },
+    "content_angle_intent": {
+      "started_at": "2026-06-20T00:01:08.742",
+      "finished_at": "2026-06-20T00:01:11.631",
+      "duration_ms": 2889,
+      "status": "done"
+    },
+    "image_prompt": {
+      "started_at": "2026-06-20T00:01:14.023",
+      "finished_at": "2026-06-20T00:01:25.657",
+      "duration_ms": 11634,
+      "status": "done"
+    },
+    "image_generation": {
+      "started_at": "2026-06-20T00:01:28.396",
+      "finished_at": "2026-06-20T00:04:17.810",
+      "duration_ms": 169414,
+      "status": "done"
+    },
+    "image_formats": {
+      "started_at": "2026-06-20T00:04:28.860",
+      "finished_at": "2026-06-20T00:04:45.538",
+      "duration_ms": 16678,
+      "status": "done"
+    },
+    "image_template": {
+      "started_at": "2026-06-20T00:04:49.571",
+      "finished_at": "2026-06-20T00:04:49.575",
+      "duration_ms": 4,
+      "status": "done"
+    },
+    "captions": {
+      "started_at": "2026-06-20T00:06:58.007",
+      "finished_at": "2026-06-20T00:07:09.972",
+      "duration_ms": 11965,
+      "status": "done"
+    },
+    "review_checklist": {
+      "started_at": "2026-06-20T00:07:13.093",
+      "finished_at": "2026-06-20T00:07:16.076",
+      "duration_ms": 2983,
+      "status": "done"
+    }
+  },
+  "context_summary": "---CONTEXT SUMMARY START---\nCLIENT: Simonetti\nGENERATED: 2026-06-20T00:00:55.026114\n\nCOMPANY OVERVIEW:\n  Name: Simonetti Freres\n  Value Prop: # Simonetti Freres \u2014 company context and 2026 action plan\n  Main Features:\n  [NOT PROVIDED]\n  Key Customers: [NOT PROVIDED]\n\nAUDIENCE PERSONAS:\n  [NOT PROVIDED]\n\nBRAND VOICE (4 Core Attributes):\n  - Practical, Not Theoretical\n\nBANNED WORDS (Do not use):\n[NOT PROVIDED]\n\nCTA PHILOSOPHY:\n# Simonetti Freres \u2014 CTA guidelines ## CTA approach CTAs should invite the reader to discuss a concrete glass project. Keep them simple, local, and low-pressure.\n\nCONTENT CLUSTERS (Internal Linking):\n  [NOT PROVIDED]\n\n---CONTEXT SUMMARY END---\n"
+}

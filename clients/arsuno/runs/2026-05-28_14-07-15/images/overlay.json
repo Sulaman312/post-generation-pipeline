@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "primary_image": "image_04.png",
+  "source_width": 1024,
+  "source_height": 1024,
+  "logo": {
+    "visible": true,
+    "x": 0.04000000000000001,
+    "y": 0.00951598455739576,
+    "width": 0.18,
+    "opacity": 0.95
+  },
+  "text": {
+    "visible": true,
+    "content": "Your headline",
+    "x": 0.2425,
+    "y": 0.675,
+    "width": 0.515,
+    "fontSize": 52,
+    "fontFamily": "Arial",
+    "fill": "#ffffff",
+    "fontWeight": "bold",
+    "textAlign": "center",
+    "backgroundEnabled": false,
+    "backgroundColor": "#000000",
+    "backgroundOpacity": 0.65
+  },
+  "saved_at": "2026-05-30T21:19:36"
+}

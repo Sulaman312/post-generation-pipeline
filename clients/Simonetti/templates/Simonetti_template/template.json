@@ -1,0 +1,319 @@
+{
+  "id": "arsuno_Simonetti_template",
+  "name": "Simonetti_template",
+  "source": {
+    "type": "figma",
+    "file_key": "Y6w4uEXJXv8vBRZ0TzBd3C",
+    "node_id": "0:1",
+    "link": "https://www.figma.com/design/Y6w4uEXJXv8vBRZ0TzBd3C/Simonetti_template?node-id=0-1&p=f&t=L2ML94kzy3CPSUne-0"
+  },
+  "assets_dir": "assets",
+  "formats": {
+    "instagram": {
+      "width": 1080,
+      "height": 1350,
+      "layers": [
+        {
+          "kind": "asset",
+          "name": "White-bg-text",
+          "asset": "instagram_white-bg-text.png",
+          "node_id": "2:41",
+          "opacity": 1.0,
+          "x": 301,
+          "y": 1125,
+          "width": 779,
+          "height": 225
+        },
+        {
+          "kind": "asset",
+          "name": "light-green-box",
+          "asset": "instagram_light-green-box.png",
+          "node_id": "2:37",
+          "opacity": 1.0,
+          "x": 0,
+          "y": 1294,
+          "width": 344,
+          "height": 56
+        },
+        {
+          "kind": "asset",
+          "name": "dark-green-box",
+          "asset": "instagram_dark-green-box.png",
+          "node_id": "2:39",
+          "opacity": 1.0,
+          "x": 301,
+          "y": 1294,
+          "width": 67,
+          "height": 59
+        },
+        {
+          "kind": "asset",
+          "name": "White-Box",
+          "asset": "instagram_white-box.png",
+          "node_id": "1:30",
+          "opacity": 1.0,
+          "x": 0,
+          "y": 0,
+          "width": 508,
+          "height": 169
+        },
+        {
+          "kind": "asset",
+          "name": "logo",
+          "asset": "instagram_logo.png",
+          "node_id": "1:34",
+          "opacity": 1.0,
+          "x": 26,
+          "y": 56,
+          "width": 446,
+          "height": 75
+        },
+        {
+          "kind": "asset",
+          "name": "blue-top-right",
+          "asset": "instagram_blue-top-right.png",
+          "node_id": "1:35",
+          "opacity": 1.0,
+          "x": 712,
+          "y": 0,
+          "width": 368,
+          "height": 56
+        },
+        {
+          "kind": "text",
+          "name": "text-bold",
+          "text": "DES SOLUTIONS EN VERRE",
+          "fontSize": 40,
+          "fontWeight": "400",
+          "fontFamily": "Abel",
+          "textAlign": "left",
+          "fill": "#000000",
+          "opacity": 1.0,
+          "x": 405,
+          "y": 1162,
+          "width": 598,
+          "height": 53
+        },
+        {
+          "kind": "text",
+          "name": "text-normal",
+          "text": "ADAPTÉES À VOTRE ESPACE",
+          "fontSize": 39,
+          "fontWeight": "700",
+          "fontFamily": "Archivo Narrow",
+          "textAlign": "left",
+          "fill": "#000000",
+          "opacity": 1.0,
+          "x": 405,
+          "y": 1236,
+          "width": 662,
+          "height": 86
+        }
+      ]
+    },
+    "linkedin": {
+      "width": 1200,
+      "height": 628,
+      "layers": [
+        {
+          "kind": "asset",
+          "name": "White-Box",
+          "asset": "linkedin_white-box.png",
+          "node_id": "2:46",
+          "opacity": 1.0,
+          "x": 0,
+          "y": -5,
+          "width": 508,
+          "height": 113
+        },
+        {
+          "kind": "asset",
+          "name": "White-bg-text",
+          "asset": "linkedin_white-bg-text.png",
+          "node_id": "2:49",
+          "opacity": 1.0,
+          "x": 421,
+          "y": 499,
+          "width": 779,
+          "height": 129
+        },
+        {
+          "kind": "asset",
+          "name": "light-green-box",
+          "asset": "linkedin_light-green-box.png",
+          "node_id": "2:50",
+          "opacity": 1.0,
+          "x": 0,
+          "y": 594,
+          "width": 473,
+          "height": 34
+        },
+        {
+          "kind": "asset",
+          "name": "dark-green-box",
+          "asset": "linkedin_dark-green-box.png",
+          "node_id": "2:51",
+          "opacity": 1.0,
+          "x": 421,
+          "y": 594,
+          "width": 52,
+          "height": 37
+        },
+        {
+          "kind": "asset",
+          "name": "logo",
+          "asset": "linkedin_logo.png",
+          "node_id": "2:47",
+          "opacity": 1.0,
+          "x": 56,
+          "y": 23,
+          "width": 385,
+          "height": 65
+        },
+        {
+          "kind": "asset",
+          "name": "blue-top-right",
+          "asset": "linkedin_blue-top-right.png",
+          "node_id": "2:48",
+          "opacity": 1.0,
+          "x": 832,
+          "y": 0,
+          "width": 368,
+          "height": 56
+        },
+        {
+          "kind": "text",
+          "name": "text-bold",
+          "text": "DES SOLUTIONS EN VERRE",
+          "fontSize": 36,
+          "fontWeight": "400",
+          "fontFamily": "Abel",
+          "textAlign": "left",
+          "fill": "#000000",
+          "opacity": 1.0,
+          "x": 525,
+          "y": 520,
+          "width": 598,
+          "height": 27
+        },
+        {
+          "kind": "text",
+          "name": "text-nomral",
+          "text": "ADAPTÉES À VOTRE ESPACE",
+          "fontSize": 36,
+          "fontWeight": "700",
+          "fontFamily": "Archivo Narrow",
+          "textAlign": "left",
+          "fill": "#000000",
+          "opacity": 1.0,
+          "x": 525,
+          "y": 561,
+          "width": 662,
+          "height": 44
+        }
+      ]
+    },
+    "facebook": {
+      "width": 1200,
+      "height": 630,
+      "layers": [
+        {
+          "kind": "asset",
+          "name": "White-Box",
+          "asset": "facebook_white-box.png",
+          "node_id": "3:4",
+          "opacity": 1.0,
+          "x": 0,
+          "y": -5,
+          "width": 508,
+          "height": 113
+        },
+        {
+          "kind": "asset",
+          "name": "White-bg-text",
+          "asset": "facebook_white-bg-text.png",
+          "node_id": "3:5",
+          "opacity": 1.0,
+          "x": 421,
+          "y": 501,
+          "width": 779,
+          "height": 129
+        },
+        {
+          "kind": "asset",
+          "name": "light-green-box",
+          "asset": "facebook_light-green-box.png",
+          "node_id": "3:6",
+          "opacity": 1.0,
+          "x": 0,
+          "y": 596,
+          "width": 473,
+          "height": 34
+        },
+        {
+          "kind": "asset",
+          "name": "dark-green-box",
+          "asset": "facebook_dark-green-box.png",
+          "node_id": "3:7",
+          "opacity": 1.0,
+          "x": 421,
+          "y": 596,
+          "width": 52,
+          "height": 37
+        },
+        {
+          "kind": "asset",
+          "name": "logo",
+          "asset": "facebook_logo.png",
+          "node_id": "3:8",
+          "opacity": 1.0,
+          "x": 56,
+          "y": 23,
+          "width": 385,
+          "height": 65
+        },
+        {
+          "kind": "asset",
+          "name": "blue-top-right",
+          "asset": "facebook_blue-top-right.png",
+          "node_id": "3:9",
+          "opacity": 1.0,
+          "x": 832,
+          "y": 0,
+          "width": 368,
+          "height": 56
+        },
+        {
+          "kind": "text",
+          "name": "text-bold",
+          "text": "DES SOLUTIONS EN VERRE",
+          "fontSize": 36,
+          "fontWeight": "400",
+          "fontFamily": "Abel",
+          "textAlign": "left",
+          "fill": "#000000",
+          "opacity": 1.0,
+          "x": 525,
+          "y": 522,
+          "width": 598,
+          "height": 27
+        },
+        {
+          "kind": "text",
+          "name": "text-nomral",
+          "text": "ADAPTÉES À VOTRE ESPACE",
+          "fontSize": 36,
+          "fontWeight": "700",
+          "fontFamily": "Archivo Narrow",
+          "textAlign": "left",
+          "fill": "#000000",
+          "opacity": 1.0,
+          "x": 525,
+          "y": 562,
+          "width": 662,
+          "height": 44
+        }
+      ]
+    }
+  }
+}

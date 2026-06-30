@@ -1,0 +1,79 @@
+{
+  "client_id": "arsuno",
+  "run_id": "2026-05-25_22-57-26",
+  "topic": "AI Document Automation in Healthcare: From Patient Intake to Clinical Summaries",
+  "statuses": {
+    "topic_card": "done",
+    "serp_research": "done",
+    "research": "done",
+    "assignment_brief": "done",
+    "outline": "done",
+    "draft": "done",
+    "fact_check": "done",
+    "final_output": "done"
+  },
+  "timestamp": "2026-05-25T23:05:33.314054",
+  "archived": false,
+  "manual_inputs": {
+    "Topic": "AI Document Automation in Healthcare: From Patient Intake to Clinical Summaries",
+    "Seed Keyword": "AI patient intake automation healthcare",
+    "Secondary Keywords": "AI patient intake automation healthcare\t\nAI clinical documentation \u00b7 automate patient intake forms \u00b7 healthcare AI automation GDPR \u00b7 AI document processing clinic",
+    "Search Intent": "Commercial \u2192 Transactional",
+    "Target Persona": "Sarah/James \u2014 The Compliance-Aware Growth COO (Healthcare: Clinical Director / CEO, psychiatry or allied health clinic, 50\u2013200 employees, Switzerland/UK/USA, GDPR/HIPAA primary concern)",
+    "Word Count": "2000",
+    "Angle / Hook": "Mirror Arsuno.ai's published psychiatry clinic (Switzerland) case study. This article IS the proof asset for healthcare prospects. Lead with the operational problem (clinicians spending 30\u201340% of time on paperwork), show the AI solution in clinical workflow terms, anchor every claim to the 70% manual work reduction and 3.5x automation efficiency stats. GDPR compliance must be woven throughout, not added at the end.",
+    "Internal Links": "Arsuno.ai Smart Document Handling feature \u00b7 AI Chat Support (patient scheduling) \u00b7 Healthcare case study page",
+    "Notes": "Use EXACT case study stats from the document: 70% reduction in manual work, 3.5x increase in automation efficiency. Quote from Swiss clinic CEO is available and powerful \u2014 paraphrase it rather than reproduce verbatim. Must mention: on-premises data option, GDPR compliance, encryption in transit and at rest. Avoid over-explaining the tech \u2014 focus on clinical outcomes and staff experience. Use words 'clinician', 'patient intake', 'clinical summary', 'risk assessment' \u2014 not generic business language."
+  },
+  "target_word_count": 2000,
+  "step_timings": {
+    "topic_card": {
+      "started_at": "2026-05-25T22:57:30.052",
+      "finished_at": "2026-05-25T22:57:48.280",
+      "duration_ms": 18228,
+      "status": "done"
+    },
+    "serp_research": {
+      "started_at": "2026-05-25T22:57:52.130",
+      "finished_at": "2026-05-25T22:58:04.597",
+      "duration_ms": 12467,
+      "status": "done"
+    },
+    "research": {
+      "started_at": "2026-05-25T22:58:20.864",
+      "finished_at": "2026-05-25T22:58:49.969",
+      "duration_ms": 29105,
+      "status": "done"
+    },
+    "assignment_brief": {
+      "started_at": "2026-05-25T22:59:01.110",
+      "finished_at": "2026-05-25T22:59:32.758",
+      "duration_ms": 31648,
+      "status": "done"
+    },
+    "outline": {
+      "started_at": "2026-05-25T22:59:36.819",
+      "finished_at": "2026-05-25T23:00:17.151",
+      "duration_ms": 40332,
+      "status": "done"
+    },
+    "draft": {
+      "started_at": "2026-05-25T23:00:27.115",
+      "finished_at": "2026-05-25T23:02:19.082",
+      "duration_ms": 111967,
+      "status": "done"
+    },
+    "fact_check": {
+      "started_at": "2026-05-25T23:02:29.174",
+      "finished_at": "2026-05-25T23:04:22.044",
+      "duration_ms": 112870,
+      "status": "done"
+    },
+    "final_output": {
+      "started_at": "2026-05-25T23:04:51.432",
+      "finished_at": "2026-05-25T23:05:33.311",
+      "duration_ms": 41879,
+      "status": "done"
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "template_id": "social_post",
+  "template_name": "Arsuno Social Post",
+  "source_template": "clients/arsuno/templates/social_post/template.json",
+  "headline": {
+    "lines": [
+      {
+        "text": "Build with AI",
+        "weight": "bold"
+      },
+      {
+        "text": "Fast and efficient",
+        "weight": "normal"
+      }
+    ]
+  },
+  "formats": {
+    "facebook": {
+      "card": {
+        "fill": "#111827",
+        "height": 138,
+        "opacity": 0.88,
+        "radius": 34,
+        "width": 455,
+        "x": 452,
+        "y": 446
+      },
+      "logo": {
+        "width": 190,
+        "x": 293,
+        "y": 17
+      },
+      "text": {
+        "fill": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 36,
+        "lineGap": 7,
+        "width": 385,
+        "x": 487,
+        "y": 472
+      }
+    },
+    "instagram": {
+      "card": {
+        "fill": "#111827",
+        "height": 170,
+        "opacity": 0.88,
+        "radius": 46,
+        "width": 620,
+        "x": 455,
+        "y": 1003
+      },
+      "logo": {
+        "width": 230,
+        "x": 30,
+        "y": 161
+      },
+      "text": {
+        "fill": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 48,
+        "lineGap": 10,
+        "width": 525,
+        "x": 503,
+        "y": 1035
+      }
+    },
+    "linkedin": {
+      "card": {
+        "fill": "#111827",
+        "height": 138,
+        "opacity": 0.88,
+        "radius": 34,
+        "width": 455,
+        "x": 729,
+        "y": 439
+      },
+      "logo": {
+        "width": 190,
+        "x": 296,
+        "y": 30
+      },
+      "text": {
+        "fill": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 36,
+        "lineGap": 7,
+        "width": 385,
+        "x": 764,
+        "y": 465
+      }
+    }
+  },
+  "created_at": "2026-06-11T23:37:45",
+  "updated_at": "2026-06-11T23:38:44"
+}

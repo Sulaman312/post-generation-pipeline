@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "primary_image": "image_04.png",
+  "source_width": 1024,
+  "source_height": 1024,
+  "logo": {
+    "visible": true,
+    "x": 0.01916666666666654,
+    "y": 0.01991472868217059,
+    "width": 0.2405449223855901,
+    "opacity": 1.0
+  },
+  "text": {
+    "visible": true,
+    "content": "Is Your Company AI-Ready? Find Out!",
+    "x": 0.04999999999999999,
+    "y": 0.8362499999999999,
+    "width": 0.9,
+    "fontSize": 52,
+    "fontFamily": "Arial",
+    "fill": "#ffffff",
+    "fontWeight": "normal",
+    "textAlign": "center",
+    "backgroundEnabled": true,
+    "backgroundColor": "#000000",
+    "backgroundOpacity": 0.65
+  },
+  "saved_at": "2026-05-31T02:17:12"
+}

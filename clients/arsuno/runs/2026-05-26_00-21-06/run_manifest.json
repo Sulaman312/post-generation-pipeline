@@ -1,0 +1,79 @@
+{
+  "client_id": "arsuno",
+  "run_id": "2026-05-26_00-21-06",
+  "topic": "How Recruitment Agencies Are Cutting CV Screening Time in Half With AI",
+  "statuses": {
+    "topic_card": "done",
+    "serp_research": "done",
+    "research": "done",
+    "assignment_brief": "done",
+    "outline": "done",
+    "draft": "done",
+    "fact_check": "done",
+    "final_output": "done"
+  },
+  "timestamp": "2026-05-26T01:27:37.391849",
+  "archived": false,
+  "manual_inputs": {
+    "Topic": "How Recruitment Agencies Are Cutting CV Screening Time in Half With AI",
+    "Seed Keyword": "AI CV screening recruitment agency",
+    "Secondary Keywords": "AI CV screening recruitment agency\t\nAI candidate shortlisting \u00b7 automate recruitment sourcing \u00b7 executive search AI tools \u00b7 recruitment agency AI automation \u00b7 faster placement AI",
+    "Search Intent": "Commercial \u2192 Transactional",
+    "Target Persona": "Sarah/James \u2014 The Compliance-Aware Growth COO (Recruitment: Managing Partner / Founder, executive search or specialist staffing, 50\u2013200 employees, USA/UK, placement speed is primary KPI)",
+    "Word Count": "1500",
+    "Angle / Hook": "Mirror Arsuno.ai's US recruitment company case study. The angle is competitive advantage \u2014 the firm that shortlists fastest wins the repeat business. Frame AI as a multiplier for consultants, not a replacement for relationship skills. Use the 2x faster project delivery and 50% client satisfaction improvement as the anchor stats.",
+    "Internal Links": "Arsuno.ai Smart Document Handling \u00b7 AI Business Insights feature \u00b7 Recruitment case study page",
+    "Notes": "Use the exact outcome stats: 2x faster project delivery, 50% improvement in client satisfaction. Reference 'Bullhorn' as an existing tool \u2014 signals stack awareness for recruitment ICPs. The 'human touch' anxiety (from David persona) applies here too \u2014 address it directly: AI handles the volume work, consultants handle the relationship. GDPR-compliant candidate data handling must appear before the CTA."
+  },
+  "target_word_count": 1500,
+  "step_timings": {
+    "topic_card": {
+      "started_at": "2026-05-26T00:21:08.345",
+      "finished_at": "2026-05-26T00:21:18.530",
+      "duration_ms": 10185,
+      "status": "done"
+    },
+    "serp_research": {
+      "started_at": "2026-05-26T00:21:28.921",
+      "finished_at": "2026-05-26T00:21:37.063",
+      "duration_ms": 8141,
+      "status": "done"
+    },
+    "research": {
+      "started_at": "2026-05-26T00:21:48.281",
+      "finished_at": "2026-05-26T00:22:14.638",
+      "duration_ms": 26357,
+      "status": "done"
+    },
+    "assignment_brief": {
+      "started_at": "2026-05-26T00:22:37.856",
+      "finished_at": "2026-05-26T00:23:03.628",
+      "duration_ms": 25772,
+      "status": "done"
+    },
+    "outline": {
+      "started_at": "2026-05-26T00:23:06.028",
+      "finished_at": "2026-05-26T00:23:42.399",
+      "duration_ms": 36371,
+      "status": "done"
+    },
+    "draft": {
+      "started_at": "2026-05-26T00:24:05.678",
+      "finished_at": "2026-05-26T00:25:32.410",
+      "duration_ms": 86732,
+      "status": "done"
+    },
+    "fact_check": {
+      "started_at": "2026-05-26T00:26:02.967",
+      "finished_at": "2026-05-26T00:27:53.396",
+      "duration_ms": 110429,
+      "status": "done"
+    },
+    "final_output": {
+      "started_at": "2026-05-26T01:26:21.007",
+      "finished_at": "2026-05-26T01:27:37.388",
+      "duration_ms": 76381,
+      "status": "done"
+    }
+  }
+}
