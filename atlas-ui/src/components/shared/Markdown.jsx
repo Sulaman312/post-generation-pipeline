@@ -66,14 +66,33 @@ function isPipelineFieldKey(key) {
 
 function isMajorSectionTitle(text) {
   const t = String(text || "").trim().replace(/:$/, "");
-  if (/^\d+\.\s/.test(t)) return true;
   if (/^(MAIN RESPONSE|RESPONSE)$/i.test(t)) return true;
   if (/CITATION URLS/i.test(t)) return true;
   if (/RELATED QUESTIONS/i.test(t)) return true;
-  if (t.length >= 4 && t === t.toUpperCase() && /[A-Z]/.test(t) && /\s/.test(t)) {
+  // Short ALL-CAPS banners only (not long SERP category lines).
+  if (
+    t.length >= 4 &&
+    t.length <= 36 &&
+    t === t.toUpperCase() &&
+    /[A-Z]/.test(t) &&
+    /\s/.test(t)
+  ) {
     return true;
   }
   return false;
+}
+
+function isSubsectionTitle(text) {
+  const t = String(text || "").trim();
+  return /^\d+\.\s/.test(t);
+}
+
+function renderSubsectionHeading(title, key) {
+  return (
+    <h4 key={key} className="md-section-heading md-section-heading--minor">
+      {renderInline(title, key)}
+    </h4>
+  );
 }
 
 function renderOutlineHeading(line, key) {
@@ -106,11 +125,21 @@ function renderDelimiterHeading(text, key) {
 function renderBoldHeading(title, key) {
   const text = title.trim();
   const clean = text.replace(/:$/, "");
+  if (isSubsectionTitle(clean)) {
+    return renderSubsectionHeading(clean, key);
+  }
   if (isMajorSectionTitle(clean)) {
     return renderDelimiterHeading(clean, key);
   }
+  if (clean === clean.toUpperCase() && clean.length > 36) {
+    return (
+      <p key={key} className="md-category-label">
+        <strong>{clean}</strong>
+      </p>
+    );
+  }
   return (
-    <h3 key={key} className="md-section-heading">
+    <h3 key={key} className="md-section-heading md-section-heading--minor">
       {clean}
     </h3>
   );
@@ -246,14 +275,22 @@ function renderParagraphBlock(block, key) {
 
   const boldOnly = trimmed.match(/^\*\*([^*]+)\*\*\s*$/);
   if (boldOnly) {
-    const outlineFromBold = renderOutlineHeading(boldOnly[1], key);
+    const inner = boldOnly[1].trim();
+    const outlineFromBold = renderOutlineHeading(inner, key);
     if (outlineFromBold) return outlineFromBold;
-    return renderBoldHeading(boldOnly[1], key);
+    if (inner.includes(":") && inner.length > 48 && !isMajorSectionTitle(inner)) {
+      return (
+        <p key={key} className="md-body-paragraph md-lead-line">
+          <strong>{renderInline(inner, key)}</strong>
+        </p>
+      );
+    }
+    return renderBoldHeading(inner, key);
   }
 
   const numberedSection = trimmed.match(/^(\d+\.\s+.+)$/);
-  if (numberedSection && !trimmed.includes("**") && !trimmed.includes(":")) {
-    return renderBoldHeading(numberedSection[1], key);
+  if (numberedSection && !trimmed.includes("**")) {
+    return renderSubsectionHeading(numberedSection[1], key);
   }
 
   const fieldMatch = firstLine.match(PIPELINE_FIELD_LINE);
