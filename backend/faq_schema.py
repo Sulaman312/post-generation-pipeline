@@ -178,6 +178,16 @@ def extract_final_article_body(text: str) -> str:
     return body.strip()
 
 
+def replace_final_article_body(full_text: str, new_article: str) -> str:
+    start = full_text.find(FINAL_ARTICLE_START)
+    end = full_text.find(FINAL_ARTICLE_END)
+    if start == -1 or end == -1 or end <= start:
+        return full_text
+    head = full_text[: start + len(FINAL_ARTICLE_START)]
+    tail = full_text[end:]
+    return f"{head}\n{new_article.strip()}\n{tail}"
+
+
 def extract_faq_schema_script(text: str) -> str:
     if not text:
         return ""

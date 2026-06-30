@@ -430,16 +430,6 @@ def _repair_article_with_llm(
     ).strip()
 
 
-def replace_final_article_body(full_text: str, new_article: str) -> str:
-    start = full_text.find(faq_schema.FINAL_ARTICLE_START)
-    end = full_text.find(faq_schema.FINAL_ARTICLE_END)
-    if start == -1 or end == -1 or end <= start:
-        return full_text
-    head = full_text[: start + len(faq_schema.FINAL_ARTICLE_START)]
-    tail = full_text[end:]
-    return f"{head}\n{new_article.strip()}\n{tail}"
-
-
 def _update_metadata_counts(full_text: str, article_md: str, word_target: int | None) -> str:
     faq_n = len(faq_schema.extract_faq_pairs(article_md))
     ext_n = count_external_markdown_links(article_md)
@@ -607,7 +597,7 @@ def enforce_final_output(
     article = _preserve_faq_from_prior_steps(article, client_id, run_id)
 
     if faq_schema.FINAL_ARTICLE_START in text:
-        text = replace_final_article_body(text, article)
+        text = faq_schema.replace_final_article_body(text, article)
     elif article.strip():
         text = article
 
